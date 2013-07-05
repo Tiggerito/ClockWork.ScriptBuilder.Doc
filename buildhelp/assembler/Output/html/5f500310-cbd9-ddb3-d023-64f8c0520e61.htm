@@ -1,0 +1,182 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>ClockWork.ScriptBuilder.JavaScript Namespace</title>
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="ClockWork.ScriptBuilder.JavaScript" />
+    <meta name="file" content="5f500310-cbd9-ddb3-d023-64f8c0520e61" />
+    <meta name="guid" content="5f500310-cbd9-ddb3-d023-64f8c0520e61" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="N:ClockWork.ScriptBuilder.JavaScript" />
+      <MSHelp:TOCTitle Title="ClockWork.ScriptBuilder.JavaScript Namespace" />
+      <MSHelp:RLTitle Title="ClockWork.ScriptBuilder.JavaScript Namespace ()" />
+      <MSHelp:Keyword Index="A" Term="N:ClockWork.ScriptBuilder.JavaScript" />
+      <MSHelp:Keyword Index="A" Term="frlrfClockWorkScriptBuilderJavaScript" />
+      <MSHelp:Keyword Index="K" Term="ClockWork.ScriptBuilder.JavaScript namespace" />
+      <MSHelp:Keyword Index="F" Term="ClockWork.ScriptBuilder.JavaScript" />
+      <MSHelp:Attr Name="HelpPriority" Value="1" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="C++" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label><label id="devlangsMenuJavaScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JavaScript </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+        <input id="JavaScriptCheckbox" type="checkbox" data="JavaScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="JavaScriptCheckbox">JavaScript</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">.NET Framework Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">ClockWork.ScriptBuilder.JavaScript Namespace</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <font color="DarkGray"></font>
+        <p /> <h1 class="heading"><span onclick="ExpandCollapse(classToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(classToggle, event)" tabindex="0"><img id="classToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Classes</span></h1><div id="classSection" class="section" name="collapseableSection" style=""><table id="typeList" class="members" frame="lhs" cellpadding="2"><col width="10%" /><tr><th class="iconColumn">
+           
+       </th><th class="nameColumn">Class</th><th class="descriptionColumn">Description</th></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="3023ab07-8821-e792-c5a5-05e53e407920.htm">Js</a></td><td><div class="summary">
+            Provides a quick way to create Js Items
+            This makes script building code more readable
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="adac58cf-57d2-f217-c07b-c3dc479e9d10.htm">JsArguments</a></td><td><div class="summary">
+            argument syntax:
+            (arg, arg, arg)
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="d659d2d9-eb01-8bc8-b7a5-b30092aebd09.htm">JsArray</a></td><td><div class="summary">
+            Renders array syntax:
+            [item, item, item]
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="da2ce056-cf86-38b2-795f-65940e6f9644.htm">JsBlock</a></td><td><div class="summary">
+            Renders block syntax:
+            { 
+            	line 
+            	line 
+            	line 
+            }
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="47e5a676-99af-1371-fdef-2ca81637cb36.htm">JsCall</a></td><td><div class="summary">
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="0c05068e-e14b-a241-c033-1dd7e4e05900.htm">JsFormatProvider</a></td><td><div class="summary">
+            Formats types to conform with javascript on top of the normal ScriptFormatProvider features
+            Use the singleton Instance to save resources
+            
+            Bool = true|false
+            DateTime = yyyy/MM/dd HH:mm:ss
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="9e1bf967-862c-7fa2-0df8-adfb12c077f1.htm">JsFunction</a></td><td><div class="summary">
+            Renders function syntax:
+            function name(param, param) { script } 
+            function(param, param) { script }
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="04b8954d-3a14-cc9d-7849-4dd8316ca06d.htm">JsIf</a></td><td><div class="summary">
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            if (condition) { trueItem }
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="6ccc9399-ac40-a6dd-85b5-8b4821817afd.htm">JsList</a></td><td><div class="summary">
+            Renders a set so that each item is seperated by a comma
+            item, item, item
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="095bd02b-3142-ab95-59ae-156d25cd2a00.htm">JsNew</a></td><td><div class="summary">
+            Renders new syntax:
+            new className(arg, arg, arg)
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="d483c8f5-c629-ee57-ccb3-46618ac4f208.htm">JsObject</a></td><td><div class="summary">
+            Renders object syntax:
+            {property, property, property}
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="5d34d524-deec-b8aa-dbbe-52df68850941.htm">JsParameters</a></td><td><div class="summary">
+            Renders parameter syntax:
+            (param, param, param)
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="bbd39c11-b289-6265-968d-28a74024e3c5.htm">JsProperty</a></td><td><div class="summary">
+            A property of an object.
+            name: value
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="4ff41b31-6204-6eaf-b672-61a138af5f4b.htm">JsPropertyList</a></td><td><div class="summary">
+            A collection designed to contains the JsProperty's of a JsObject
+            Can contain JsObjects or arrays of items 
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="5da5df97-fe22-ac15-401a-9e2da04c6bcf.htm">JsQuote</a></td><td><div class="summary">
+            Wrap single or double quotes round some text.
+            single quotes by default.
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="57b3fdfd-2557-2c0a-257d-0b272d3c4e34.htm">JsStatement</a></td><td><div class="summary">
+            renders as a single line ended with a semi colon (;)
+            each items is concatinated together using a ScriptLine
+            </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="3ea74c39-cbe1-1f99-d036-6fc1816e5bab.htm">JsVariableFactory</a></td><td><div class="summary">
+            Creates renderable variable names that compress to short names based on a sequence:
+            a,b,c,...,x,y,z,aa,ab,ac,...ax,ay,az,ba,bb,bc,......zzzzzzz...
+            </div></td></tr></table></div></div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+        </div>
+<span id="feedbackarea">
+			Send
+		<a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+			
+      feedback
+		</a>
+			on this topic to Tony.
+		</span>
+</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>XsElement Methods </title>
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="ClockWork.ScriptBuilder.XmlScript" />
+    <meta name="file" content="22ecf4c0-a973-2d07-5519-b40431202004" />
+    <meta name="guid" content="22ecf4c0-a973-2d07-5519-b40431202004" />
+    
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label><label id="devlangsMenuJavaScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JavaScript </nobr></label></span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0">
+              <img id="memberOptionsDropdownImage" src="../icons/dropdown.gif" /> <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All </nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+        <input id="JavaScriptCheckbox" type="checkbox" data="JavaScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="JavaScriptCheckbox">JavaScript</label>
+        <br />
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">.NET Framework Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">XsElement Methods </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+            <a href="e43d165f-2294-8377-25f6-9e4a6a6d57b5.htm">XsElement Class</a>  <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>  
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <font color="DarkGray"></font>
+        <p /> <p>The <a href="e43d165f-2294-8377-25f6-9e4a6a6d57b5.htm">XsElement</a> type exposes the following members.</p><h1 class="heading"><span onclick="ExpandCollapse(methodTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(methodTableToggle, event)" tabindex="0"><img id="methodTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Methods</span></h1><div id="methodTableSection" class="section" name="collapseableSection" style=""><table id="memberList" class="members" frame="lhs" cellpadding="2"><col width="10%" /><tr><th class="iconColumn">
+               
+            </th><th class="nameColumn">Name</th><th class="descriptionColumn">Description</th></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="781479d0-62a4-c2cc-e6b2-006922108487.htm">Add</a></td><td><div class="summary">
+            Adds an item to the end of the set
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="199a183c-21b6-a893-fa5b-71bf6f507909.htm">AddRange</a></td><td><div class="summary">
+            Lets you add multiple items
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="bb326e8c-459d-1c24-8ea4-a9ec1c452017.htm">AddToRenderList</a></td><td><div class="summary">
+            remove attributes from render list
+            </div> (Overrides <a href="0446be41-9ca2-8eab-b795-9cf0378c634d.htm">ScriptSet<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>AddToRenderList(List<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="nu">(</span></span>Object<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="nu">)</span></span>, Object)</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="a487c74a-2303-b236-500d-ee1f3c34cfed.htm">Clear</a></td><td><div class="summary">
+            Removes all items 
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="43c19e18-52d7-6d13-c68f-5aec6f9ba56d.htm">Contains</a></td><td><div class="summary">
+            Determines whether the set contains a specific item.
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="24dc8ec4-4ab2-63d8-d56c-278155baf75e.htm">CopyTo</a></td><td><div class="summary">
+            Copies the elements of the set to an Array, starting at a particular Array index.
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="88c19e92-86f3-367d-d546-c8cf65bf52cf.htm">CreateXmlElement</a></td><td><div class="summary">
+            Creates an XmlElement based on this
+            Adds all children
+            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a></td><td><div class="summary">Determines whether the specified <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a> is equal to the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/4k87zsw7" target="_blank">Finalize</a></td><td><div class="summary">Allows an <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a> to attempt to free resources and perform other cleanup operations before the <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a> is reclaimed by garbage collection.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a></td><td><div class="summary">Serves as a hash function for a particular type. <a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span></span></a> is suitable for use in hashing algorithms and data structures like a hash table.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a></td><td><div class="summary">Gets the <a href="http://msdn2.microsoft.com/en-us/library/42892f65" target="_blank">Type</a> of the current instance.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="a653c247-1a38-53b9-cd01-aa7659aa867a.htm">IndexOf</a></td><td><div class="summary">
+            Determines the index of a specific item
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="fc580797-5083-abbf-6939-ccd45bdc08a3.htm">Insert</a></td><td><div class="summary">
+            Inserts an item at the specified index
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="8998c955-aa25-e76d-b596-16253b4ee343.htm">InsertRange</a></td><td><div class="summary">
+            Lets you insert multiple items
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/57ctke0a" target="_blank">MemberwiseClone</a></td><td><div class="summary">Creates a shallow copy of the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="ef93dc2f-9458-d6ff-92a6-7404a1d4da19.htm">OnInitialise</a></td><td><div class="summary">
+            A good place to set default values for an item
+            Called by the constructor
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="6f68857b-2028-0c8e-d2a4-8c30c62b100e.htm">OnLayoutChanged</a></td><td><div class="summary">
+            Triggered when the items layout is changed
+            subclasses may alter internal layouts when this is striggered
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="5add5dfa-1c47-f508-469e-b5b810fef630.htm">OnRender</a></td><td><div class="summary">
+            Render the xml element
+            detects XsAttributes form within its collection and renders appropriately
+            non IXmlRenderer objects are wrapped within XsText rendering i.e. encoded 
+            </div> (Overrides <a href="393a652e-0a3a-e289-0144-38e8d2690e2d.htm">ScriptSet<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>OnRender(RenderingEventArgs)</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="a8b7ec03-b5c9-b615-acfd-5b0fec6d738c.htm">RegisterItem</a></td><td><div class="summary">
+            Only add it if its not already been registered
+            
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="8d0ed3d4-3fc5-d305-7c6f-0a1f9efe48da.htm">Remove</a></td><td><div class="summary">
+            Removes the first occurrence of a specific object 
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="c29abeeb-41c3-b540-aba9-8e710ccf5622.htm">RemoveAt</a></td><td><div class="summary">
+            Removes the first occurrence of a specific object 
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;declared;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="a1b4995b-c58d-ef92-a608-76f1b44a36fc.htm">Render</a></td><td>Overloaded.  </td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="bde88c1f-bc20-cc18-e601-86eab08fb927.htm">ToString</a></td><td><div class="summary">
+            Add collection size
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="67dc7d65-baa4-a693-b785-5d4d8e95b3a6.htm">TrySetLayout</a></td><td>Overloaded.  </td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" title="Protected method" /></td><td><a href="cf98ca61-9fb8-5e32-1ea6-f832665c90bb.htm">WriteSeperator</a></td><td><div class="summary">
+            Used to write the string that seperates each item
+            By default, renders the Seperator property
+            </div> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr></table></div><h1 class="heading"><span onclick="ExpandCollapse(ExplicitInterfaceImplementationTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(ExplicitInterfaceImplementationTableToggle, event)" tabindex="0"><img id="ExplicitInterfaceImplementationTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Explicit Interface Implementations</span></h1><div id="ExplicitInterfaceImplementationTableSection" class="section" name="collapseableSection" style=""><table id="memberList" class="members" frame="lhs" cellpadding="2"><col width="10%" /><tr><th class="iconColumn">
+               
+            </th><th class="nameColumn">Name</th><th class="descriptionColumn">Description</th></tr><tr data="explicit;inherited;notNetfw;"><td><img src="../icons/pubinterface.gif" title="Explicit interface implemetation" /><img src="../icons/privmethod.gif" title="Private method" /></td><td><a href="26036a4f-79ff-ae03-5c9e-9c26d239cf42.htm">IEnumerable<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="nu">(</span></span>Object<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="nu">)</span></span><span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>GetEnumerator</a></td><td> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr><tr data="explicit;inherited;notNetfw;"><td><img src="../icons/pubinterface.gif" title="Explicit interface implemetation" /><img src="../icons/privmethod.gif" title="Private method" /></td><td><a href="f58c9b92-5b54-fe3a-b959-78dcf643728e.htm">IEnumerable<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>GetEnumerator</a></td><td> (Inherited from <a href="0da78353-f5ae-133f-c5d1-ef0424b3c4ef.htm">ScriptSet</a>.)</td></tr></table></div><h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span></h1><div id="seeAlsoSection" class="section" name="collapseableSection" style=""><div class="seeAlsoStyle"><a href="e43d165f-2294-8377-25f6-9e4a6a6d57b5.htm">XsElement Class</a></div><div class="seeAlsoStyle"><a href="68eb9ac8-45a9-4678-77a0-b5c173fa32f4.htm">ClockWork.ScriptBuilder.XmlScript Namespace</a></div></div></div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+        </div>
+<span id="feedbackarea">
+			Send
+		<a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+			
+      feedback
+		</a>
+			on this topic to Tony.
+		</span>
+</div>
+    </div>
+  </body>
+</html>

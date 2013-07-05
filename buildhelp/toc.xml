@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topics>
+  <topic id="N:ClockWork.ScriptBuilder" project="_Namespaces" file="4915fc00-ecbc-ade6-074f-fa7a68ac2f90">
+    <topic id="T:ClockWork.ScriptBuilder.Encryption" project="ClockWork.ScriptBuilder" file="eef0f52c-3871-e14e-9027-f194ae35af25">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.Encryption" project="ClockWork.ScriptBuilder" file="9043c27d-d939-17a4-4481-4baf4ac23734" />
+      <topic id="M:ClockWork.ScriptBuilder.Encryption.#ctor" project="ClockWork.ScriptBuilder" file="7983eef9-541c-b609-815e-2d21badd0b82" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.Encryption" project="ClockWork.ScriptBuilder" file="a965f818-0c71-82dd-9f62-5230de455426">
+        <topic id="M:ClockWork.ScriptBuilder.Encryption.CreateSecureString(System.String)" project="ClockWork.ScriptBuilder" file="a0508b76-de4b-20df-e5ee-2e4794aeb126" />
+        <topic id="M:ClockWork.ScriptBuilder.Encryption.ReadSecureString(System.Security.SecureString)" project="ClockWork.ScriptBuilder" file="99a610ab-5b80-e9cf-6182-a53dc42e0089" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.IScriptItem" project="ClockWork.ScriptBuilder" file="03c10319-e279-b316-ce06-15b978541938">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.IScriptItem" project="ClockWork.ScriptBuilder" file="777abd91-e36f-4b6b-ca8d-4db3ca3003c1" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.IScriptItem" project="ClockWork.ScriptBuilder" file="a978628e-e58e-ec89-72fc-779e1e2fe4b5">
+        <topic id="Overload:ClockWork.ScriptBuilder.IScriptItem.Render" project="ClockWork.ScriptBuilder" file="9972ce0f-a90d-21ce-9376-667987364246">
+          <topic id="M:ClockWork.ScriptBuilder.IScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="910ef16e-7c38-3fbb-8451-16c41b38fcd9" />
+          <topic id="M:ClockWork.ScriptBuilder.IScriptItem.Render(System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="0b821059-0134-b161-16ef-1aeaf6f9b4af" />
+          <topic id="M:ClockWork.ScriptBuilder.IScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter,System.Int32)" project="ClockWork.ScriptBuilder" file="5ed1b52d-58b5-6630-9b9b-43a5483bbe53" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.IScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="04bcb530-2776-e1d2-b481-cf99c59cebd6" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.IScriptItem" project="ClockWork.ScriptBuilder" file="616489ef-7598-6fb6-4893-2a367cfd8db7">
+        <topic id="P:ClockWork.ScriptBuilder.IScriptItem.HasRenderContent" project="ClockWork.ScriptBuilder" file="ca6da808-e98c-6d65-a046-4c5cb232047e" />
+        <topic id="P:ClockWork.ScriptBuilder.IScriptItem.Layout" project="ClockWork.ScriptBuilder" file="1113bc09-0a14-50e9-1326-48550e854a9a" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.IScriptWriter" project="ClockWork.ScriptBuilder" file="f2528118-6312-9120-d36b-42044ef3c6cc">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.IScriptWriter" project="ClockWork.ScriptBuilder" file="fcb71b0b-eee1-5f47-1732-483202b21866" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.IScriptWriter" project="ClockWork.ScriptBuilder" file="59078c40-d6e6-136f-bd4b-6697191528ed">
+        <topic id="Overload:ClockWork.ScriptBuilder.IScriptWriter.BeginIndent" project="ClockWork.ScriptBuilder" file="a1514af6-b0ca-0d7d-ab27-ef18078e7c7f">
+          <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.BeginIndent" project="ClockWork.ScriptBuilder" file="8b1482ec-bebc-125d-419e-af7236f448c3" />
+          <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.BeginIndent(System.Int32)" project="ClockWork.ScriptBuilder" file="5d474085-0c6b-a0ee-001e-e6e0a768273f" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.Close" project="ClockWork.ScriptBuilder" file="2ec3a2ca-e232-92ad-119e-94b8ac7ec922" />
+        <topic id="Overload:ClockWork.ScriptBuilder.IScriptWriter.EndIndent" project="ClockWork.ScriptBuilder" file="7ede3aa2-ae5c-9b14-ca41-ef1c17f06ee7">
+          <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.EndIndent" project="ClockWork.ScriptBuilder" file="fea964a6-7f27-1f8a-95ec-44926fd344d5" />
+          <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.EndIndent(System.Int32)" project="ClockWork.ScriptBuilder" file="14931f06-8c50-59dc-6661-25e55d94bf59" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.Flush" project="ClockWork.ScriptBuilder" file="eab2486e-9438-1fd9-6383-b7122a007470" />
+        <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.Format(System.Object)" project="ClockWork.ScriptBuilder" file="d6ceaa4a-e984-3a25-a844-82f627e7b1a2" />
+        <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.Write(System.Object)" project="ClockWork.ScriptBuilder" file="cabcaf16-4e73-5c98-6492-8d5e3a9ae9fa" />
+        <topic id="M:ClockWork.ScriptBuilder.IScriptWriter.WriteNewLineAndIndent" project="ClockWork.ScriptBuilder" file="884dae8b-37a4-322f-71dd-643252422ca3" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.IScriptWriter" project="ClockWork.ScriptBuilder" file="2485d645-0c6b-a35e-b1d1-fadd05b9e524">
+        <topic id="P:ClockWork.ScriptBuilder.IScriptWriter.Compress" project="ClockWork.ScriptBuilder" file="ab53dcc6-8627-4b76-47aa-0e2db10ccb8d" />
+        <topic id="P:ClockWork.ScriptBuilder.IScriptWriter.CurrentIndentLevel" project="ClockWork.ScriptBuilder" file="fdc5344b-5766-43b8-de01-a1edab09ab7c" />
+        <topic id="P:ClockWork.ScriptBuilder.IScriptWriter.FormatProvider" project="ClockWork.ScriptBuilder" file="6ae25aea-65a3-06ac-4a6c-fddf9b6e4700" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.LayoutChangedEventArgs" project="ClockWork.ScriptBuilder" file="2d1f8da6-6ed3-aef0-bd85-bb996abdf55b">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.LayoutChangedEventArgs" project="ClockWork.ScriptBuilder" file="0d4d0332-0b2d-11d4-86a6-f895cccd3994" />
+      <topic id="M:ClockWork.ScriptBuilder.LayoutChangedEventArgs.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="2512165c-f792-e5bc-7433-3b5f31aea449" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.LayoutChangedEventArgs" project="ClockWork.ScriptBuilder" file="0d50d8aa-db95-aba5-b4d6-cedc491c4077" />
+      <topic id="Properties.T:ClockWork.ScriptBuilder.LayoutChangedEventArgs" project="ClockWork.ScriptBuilder" file="b0b20594-20fc-d8be-35f2-49392851024f">
+        <topic id="P:ClockWork.ScriptBuilder.LayoutChangedEventArgs.Layout" project="ClockWork.ScriptBuilder" file="9fb9a24c-3354-f3bc-e86e-c0e5e8086b25" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.RenderingEventArgs" project="ClockWork.ScriptBuilder" file="ba4a4b1d-7fd6-b71c-8a59-791fba859234">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.RenderingEventArgs" project="ClockWork.ScriptBuilder" file="fe646f7a-ac66-96bd-a3b4-c770dd617eb0" />
+      <topic id="M:ClockWork.ScriptBuilder.RenderingEventArgs.#ctor(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="6ed4d163-b330-92d7-5afe-673d95432944" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.RenderingEventArgs" project="ClockWork.ScriptBuilder" file="b9d2f84a-a7ff-af0c-804e-a3c2885116c0" />
+      <topic id="Properties.T:ClockWork.ScriptBuilder.RenderingEventArgs" project="ClockWork.ScriptBuilder" file="e10dcead-a25e-a587-5f0c-fb0db29a7e6b">
+        <topic id="P:ClockWork.ScriptBuilder.RenderingEventArgs.Writer" project="ClockWork.ScriptBuilder" file="8806fc2b-02ec-5446-7f0c-3ca88e58ea3f" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.Sb" project="ClockWork.ScriptBuilder" file="c4e405b5-85e5-569e-8263-22c8ab508a01">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.Sb" project="ClockWork.ScriptBuilder" file="53c8a8f2-c269-2892-f51f-d6d0b66c3544" />
+      <topic id="M:ClockWork.ScriptBuilder.Sb.#ctor" project="ClockWork.ScriptBuilder" file="c7f22bf3-97fc-10bb-97e2-c45c4bf079b8" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.Sb" project="ClockWork.ScriptBuilder" file="927c4521-d10c-f196-149e-7237a66e5040">
+        <topic id="M:ClockWork.ScriptBuilder.Sb.Compressible(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="d9fa8e43-9025-13a3-d2f5-cf84d1792b40" />
+        <topic id="M:ClockWork.ScriptBuilder.Sb.HasRenderContent(System.Object)" project="ClockWork.ScriptBuilder" file="e9540ac3-5244-eff5-78c9-8b1569ad5b22" />
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.Indent" project="ClockWork.ScriptBuilder" file="07d22ac4-fd05-8ab4-a109-2dd8b8be8765">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Indent(System.Object[])" project="ClockWork.ScriptBuilder" file="d13228f7-e960-a31f-c980-2a193a5b0ef5" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Indent(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="abc23307-7a0a-ba16-7ac5-b8f9d3501d99" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.Line" project="ClockWork.ScriptBuilder" file="947db758-2f9b-9993-f669-44a5bfe01adc">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Line(System.Object[])" project="ClockWork.ScriptBuilder" file="a54638e1-507b-b343-f2c2-9a57a27c837d" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Line(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="d8910974-7b22-fc44-44e5-180ef2cc3315" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.Render" project="ClockWork.ScriptBuilder" file="18775c8e-9847-0b45-aa2f-59ff39e64d2e">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Render(System.Object)" project="ClockWork.ScriptBuilder" file="2cbaad14-68b9-2c87-2747-c5fb4dd6ea39" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Render(System.Object,System.Int32)" project="ClockWork.ScriptBuilder" file="38bb16ce-9dbd-b24e-cc77-7844cdc48e72" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.Script" project="ClockWork.ScriptBuilder" file="d5cda839-fa3c-6896-2cb0-0f0f14fdaa4f">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Script(System.Object[])" project="ClockWork.ScriptBuilder" file="2fd265fb-10e4-4659-659e-40f9a1aa2578" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Script(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="076ac0e7-dcab-6a8b-66d8-af788c6ae718" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.ScriptIf" project="ClockWork.ScriptBuilder" file="597d06c1-7f2b-1404-92b5-33130318e00d">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.ScriptIf(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="fd796bbd-bb3c-271d-4630-07ffeea1e097" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.ScriptIf(System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="cbadb4f5-abcd-db1e-d070-0da47e28334f" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.Sb.TrySetLayout(System.Object,ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="106b2e4c-a8f4-c697-e859-9538e15de67b" />
+        <topic id="Overload:ClockWork.ScriptBuilder.Sb.Wrapper" project="ClockWork.ScriptBuilder" file="92eea000-2bc7-4309-8f6a-8fc2160f06dc">
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Wrapper(System.Object,ClockWork.ScriptBuilder.IScriptItem,System.Object)" project="ClockWork.ScriptBuilder" file="b8e88dd3-6e83-8650-78f2-eca00dc1ada8" />
+          <topic id="M:ClockWork.ScriptBuilder.Sb.Wrapper(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.IScriptItem,System.Object)" project="ClockWork.ScriptBuilder" file="7081981e-be55-60f4-6a81-ddb6ff1f5733" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.Script" project="ClockWork.ScriptBuilder" file="cd2eeeb8-da41-e7af-137e-181c51836458">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.Script" project="ClockWork.ScriptBuilder" file="334e9212-a32d-015a-9d62-7d67ccb37d76" />
+      <topic id="Overload:ClockWork.ScriptBuilder.Script.#ctor" project="ClockWork.ScriptBuilder" file="17c889a6-3c6c-fd30-d6d6-427cb80b2225">
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor" project="ClockWork.ScriptBuilder" file="6ce6ad7c-f392-1890-fcc6-3b1bab33b652" />
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="67f78a7d-bad4-9a89-cc06-87adcd2ab8b2" />
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="ba85041e-08fa-48a2-519b-318c82e6d47a" />
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="d65fa78f-1082-af0e-4eb2-8d5e1d1d4a1a" />
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="ff9e0762-0ea8-9076-711d-57735f361f0d" />
+        <topic id="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="1c29f95c-ee62-d32c-1f48-759b224cce39" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.Script" project="ClockWork.ScriptBuilder" file="480a4fcc-d837-e127-3564-7b47c5224d96">
+        <topic id="Overload:ClockWork.ScriptBuilder.Script.Render" project="ClockWork.ScriptBuilder" file="adf78052-7e43-784b-351b-f203852b4d45" />
+        <topic id="Overload:ClockWork.ScriptBuilder.Script.TrySetLayout" project="ClockWork.ScriptBuilder" file="9e6a5c81-a366-5100-1374-0ce1eabd9d89" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.Script" project="ClockWork.ScriptBuilder" file="d5bfbd79-ac0d-78a8-eec1-dd6531f61ef5">
+        <topic id="P:ClockWork.ScriptBuilder.Script.DefaultLayout" project="ClockWork.ScriptBuilder" file="f99c4748-99b1-2682-e1e3-68a93ba28fd4" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.Script" project="ClockWork.ScriptBuilder" file="64126051-8521-ed1b-9244-954498f315cd" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptCompressible" project="ClockWork.ScriptBuilder" file="042b6cca-80fa-e6f9-a6b0-8d1f442aee3e">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptCompressible" project="ClockWork.ScriptBuilder" file="47e9238a-5ed9-511f-aca4-40d46c3382f5" />
+      <topic id="M:ClockWork.ScriptBuilder.ScriptCompressible.#ctor(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="984721d4-7d94-059e-6518-cfb73b051054" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptCompressible" project="ClockWork.ScriptBuilder" file="e3ac9f60-7a95-6bcb-ab21-1cca01ee83a8">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptCompressible.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="df13459d-fdaa-09b7-1735-478440b45ba1" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptCompressible.Render" project="ClockWork.ScriptBuilder" file="f62217a5-fa65-e9ce-9e45-ba8a75d4232e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptCompressible.TrySetLayout" project="ClockWork.ScriptBuilder" file="cd8721cd-c79f-3faf-4e6e-620507368adf" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptCompressible" project="ClockWork.ScriptBuilder" file="ec200cd3-baa1-35ac-60aa-f29143a712e0">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptCompressible.Compressed" project="ClockWork.ScriptBuilder" file="e314814f-82a8-e26b-5bfb-e54448e7a718" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptCompressible.Full" project="ClockWork.ScriptBuilder" file="9068030b-d1d1-4777-660e-5c27c42c2a09" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptCompressible" project="ClockWork.ScriptBuilder" file="75b514e1-1751-d28b-903f-f67269150618" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptFormatProvider" project="ClockWork.ScriptBuilder" file="9d723c48-9a5a-f6b1-8c72-12c9d94c157f">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptFormatProvider" project="ClockWork.ScriptBuilder" file="c7b3ff13-94ae-eb69-5c28-78c438308a9b" />
+      <topic id="M:ClockWork.ScriptBuilder.ScriptFormatProvider.#ctor" project="ClockWork.ScriptBuilder" file="992b92d0-3807-2c40-a115-769297c55538" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptFormatProvider" project="ClockWork.ScriptBuilder" file="ea600edd-c547-4506-8bf2-4f2b24375403">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptFormatProvider.System#IFormatProvider#GetFormat(System.Type)" project="ClockWork.ScriptBuilder" file="7a644d11-966c-5706-a702-f276e4be9acc" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptFormatProvider.Format(System.String,System.Object,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="f90d273f-372e-ca25-16e9-9feab66e71f8" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptFormatProvider" project="ClockWork.ScriptBuilder" file="34aa06df-fd3e-1cc5-96e9-17abf5ce7c62">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptFormatProvider.Instance" project="ClockWork.ScriptBuilder" file="02363d74-3449-6b41-a333-316137f6cc05" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptIf" project="ClockWork.ScriptBuilder" file="b81232f3-f98e-f609-f9e6-cee95aa02785">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptIf" project="ClockWork.ScriptBuilder" file="52715ce8-9b7d-c04d-a510-3da38977bb6a" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptIf.#ctor" project="ClockWork.ScriptBuilder" file="77c19442-8e43-e31f-30d1-59e8a6e85a69">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIf.#ctor(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="ffc48605-f0a5-0672-9d6c-1ea80fdbab9b" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIf.#ctor(System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="22847ca8-fabd-8d5c-5d5a-b92db9bbb53d" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptIf" project="ClockWork.ScriptBuilder" file="de3ce812-6453-9788-7688-b6a2e36da203">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIf.ObjectScriptIfResult(System.Object)" project="ClockWork.ScriptBuilder" file="8b4d9362-18a2-be2f-ba30-5616c5bc785c" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="ea436833-8a7c-7ece-7efc-727e699c1f53" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptIf.Render" project="ClockWork.ScriptBuilder" file="54989ded-bae9-bc81-56f4-f361791ac82e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptIf.TrySetLayout" project="ClockWork.ScriptBuilder" file="83478306-122b-3cca-524c-5a2baaed9cb5" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptIf" project="ClockWork.ScriptBuilder" file="28ea462c-d880-3f07-c976-dea2eb2ca019">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.FalseValue" project="ClockWork.ScriptBuilder" file="b0ce179b-7b53-0ff5-94f9-c47e7492cbf9" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.HasRenderContent" project="ClockWork.ScriptBuilder" file="50f919be-08d5-0f80-c636-935806e6ff5c" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.ScriptIfResult" project="ClockWork.ScriptBuilder" file="dd5888ce-666f-c7a2-621d-f3a6c416267b" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.Test" project="ClockWork.ScriptBuilder" file="a5234708-0ff0-92e5-7c76-f4e2a886f95f" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.TestResult" project="ClockWork.ScriptBuilder" file="33678190-4ab1-bc0e-c663-ea7544a904c7" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.TrueValue" project="ClockWork.ScriptBuilder" file="4d5b63c2-ef76-e406-337b-7ababbb4b3f2" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptIf.Winner" project="ClockWork.ScriptBuilder" file="7e1c8b0b-fc06-8ad6-79de-cc851cd9c613" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptIf" project="ClockWork.ScriptBuilder" file="e12fb71e-68d7-5899-0bdc-f5e090e5a47b" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptIndent" project="ClockWork.ScriptBuilder" file="8a0d8c6d-49f7-1298-802e-d06573cbdf04">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptIndent" project="ClockWork.ScriptBuilder" file="c866e166-309c-96fd-d944-bd79f47a21cd" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptIndent.#ctor" project="ClockWork.ScriptBuilder" file="3dd27754-1fae-0879-49d3-ced5254d42b5">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor" project="ClockWork.ScriptBuilder" file="534e5b14-f36a-593c-ab40-6953982ae417" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="7baff8dc-056a-938f-35c9-e9700e883af9" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="d4f399c2-2666-c68e-0389-8a85dc55e25f" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="8c0161d5-35e5-1f80-7dc0-09af8f0b66ed" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="ec9394e7-99cb-e760-7705-3937056dada1" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="60869bd4-f661-1822-3432-7ffdb7ec7287" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptIndent" project="ClockWork.ScriptBuilder" file="62896c3b-c940-45b5-4b8d-aaeee86bccab">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptIndent.OnInitialise" project="ClockWork.ScriptBuilder" file="bcd1258f-ba93-1141-c211-3abb627df88c" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptIndent.Render" project="ClockWork.ScriptBuilder" file="6a93f49e-f10e-6f98-6f00-b7ce209d0ab9" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptIndent.TrySetLayout" project="ClockWork.ScriptBuilder" file="d20f4781-582e-7ef4-0385-4e58f33ab933" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptIndent" project="ClockWork.ScriptBuilder" file="4aa7ea08-595d-bd50-8da5-4525da11036b" />
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptIndent" project="ClockWork.ScriptBuilder" file="188dd1c3-e7ed-d59b-30a2-0db6a9646478" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptItem" project="ClockWork.ScriptBuilder" file="4722d29c-9912-b162-3e61-7be931d64b7f">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptItem" project="ClockWork.ScriptBuilder" file="e7142d86-2802-c1f6-6bf4-ae0f8fd28b4c" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptItem.#ctor" project="ClockWork.ScriptBuilder" file="9e1585a1-e917-614e-e8b3-7439862a2396">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.#ctor" project="ClockWork.ScriptBuilder" file="61a58c57-8ec5-28c3-e26c-56eaf71dbb72" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="9e22f8b3-3b11-0ddb-e842-22b7f65da7bb" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptItem" project="ClockWork.ScriptBuilder" file="1ff396be-68c9-ea2a-d423-abb34526361f">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.ObjectHasRenderContent(System.Object)" project="ClockWork.ScriptBuilder" file="74a38bb5-ece4-3b81-280a-20e50353c101" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.ObjectTrySetLayout(System.Object,ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="19373d8c-332c-83c2-bbbd-da1c89eb64d7" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.OnInitialise" project="ClockWork.ScriptBuilder" file="ef93dc2f-9458-d6ff-92a6-7404a1d4da19" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)" project="ClockWork.ScriptBuilder" file="6f68857b-2028-0c8e-d2a4-8c30c62b100e" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptItem.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="215b95b1-f90f-4fe5-a5c0-087fb852b1b9" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptItem.Render" project="ClockWork.ScriptBuilder" file="2242066f-ac69-f555-9dda-72caefc1a6a1">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render" project="ClockWork.ScriptBuilder" file="88197c10-eb3a-b6b9-a411-f66f2cb22d86" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="500b52d3-ce2f-ffb1-de0d-d818627d402a" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="3af20b18-85e2-cf4e-1e1e-90cc9804f8f0" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.Stream)" project="ClockWork.ScriptBuilder" file="e78049cd-0e55-5c85-1393-bd9fce23d932" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.StreamWriter)" project="ClockWork.ScriptBuilder" file="20a0f059-c205-e1f3-d67c-1edb53590239" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.TextWriter)" project="ClockWork.ScriptBuilder" file="473fff3b-87cc-9d57-7d54-fe2b696b4805" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.Text.StringBuilder)" project="ClockWork.ScriptBuilder" file="c620eb6e-a1d0-4f1b-134a-a2fd7e26c005" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter,System.Int32)" project="ClockWork.ScriptBuilder" file="0e3d6eb2-1b25-0954-e04d-a8c35dec0579" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.Stream,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="068904e5-0bb9-e0af-2297-bbe80cc46cbf" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.StreamWriter,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="ef97b973-200f-b01b-0333-8cb1557639f4" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.TextWriter,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="373fdcc2-af3b-0e8c-c8ac-c5572353c2a0" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.Text.StringBuilder,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="46eaeb43-8bc9-ad20-2b66-f6de77a1ad41" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptItem.TrySetLayout" project="ClockWork.ScriptBuilder" file="a3a9f3de-a0b3-ea77-4f81-cb0d40cf7b0b">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="ceab004f-12f2-708b-f090-ce8797de5cf1" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout,System.Boolean)" project="ClockWork.ScriptBuilder" file="87c8fe1e-d353-030b-284c-f681530adeef" />
+        </topic>
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptItem" project="ClockWork.ScriptBuilder" file="2d6fc445-b977-1b29-575c-9c24e0189baa">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.DefaultLayout" project="ClockWork.ScriptBuilder" file="03db02bd-2b1d-a95d-1630-d277b4588080" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.HasRenderContent" project="ClockWork.ScriptBuilder" file="4f481ba3-9d28-d5bf-b5a6-47af3219943b" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.Indents" project="ClockWork.ScriptBuilder" file="4487e87f-0ada-2430-3031-0d97138b5120" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.IsLayoutEstablished" project="ClockWork.ScriptBuilder" file="0eb78766-5727-0421-2961-f23ff9a06fb9" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.Layout" project="ClockWork.ScriptBuilder" file="b636f6fe-ed3b-ea18-2e28-b3feb180cc38" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptItem.ScriptIfResult" project="ClockWork.ScriptBuilder" file="2a957451-8358-d14b-5a5f-a0e3083fb13c" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptItem" project="ClockWork.ScriptBuilder" file="133e6c69-dafa-fdd5-c61c-26d249b97beb">
+        <topic id="E:ClockWork.ScriptBuilder.ScriptItem.LayoutChanged" project="ClockWork.ScriptBuilder" file="d50dc41b-a812-250f-93fa-912ccf3b09db" />
+        <topic id="E:ClockWork.ScriptBuilder.ScriptItem.Rendering" project="ClockWork.ScriptBuilder" file="e8a487b0-90f3-6ed5-5340-7f7c0d2dd769" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptLayout" project="ClockWork.ScriptBuilder" file="1f5109f6-a83b-b75c-56a7-7428931de08a" />
+    <topic id="T:ClockWork.ScriptBuilder.ScriptLine" project="ClockWork.ScriptBuilder" file="065f179b-0227-06d4-9ea0-e9bf0ae541cc">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptLine" project="ClockWork.ScriptBuilder" file="d74685ed-ca53-e16e-a081-4331ddbc993d" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptLine.#ctor" project="ClockWork.ScriptBuilder" file="97a79703-54a0-b8d1-99bf-b8b212b6314b">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor" project="ClockWork.ScriptBuilder" file="58fdacc2-0414-421c-ef08-a76f4b0e41e7" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="f8ea710b-2f78-5dcc-ae2d-66e431343b9f" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="b2f1fbd4-67a7-06f8-0835-1b0c427439f6" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="1b689c1d-dd72-279d-b30e-f2af7ed100cb" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="3cd86054-f498-db29-1ef8-12bdef6c9dd5" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="27bb34d4-f4e9-b69d-0513-7c4a8b1da5fe" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptLine" project="ClockWork.ScriptBuilder" file="8b810e13-9b01-4864-1aaf-0a37ba8a09e9">
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptLine.Render" project="ClockWork.ScriptBuilder" file="e4117b23-4fe7-6064-f458-d42458a2c328" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptLine.TrySetLayout" project="ClockWork.ScriptBuilder" file="aa96d2e8-5ea4-be32-0d02-e41e902d0c7d" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptLine" project="ClockWork.ScriptBuilder" file="a6e231f7-c818-14ef-6e68-4d1420c0dee4" />
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptLine" project="ClockWork.ScriptBuilder" file="f8183892-ea90-96ad-55ac-6eb10db8fc34" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptSet" project="ClockWork.ScriptBuilder" file="0da78353-f5ae-133f-c5d1-ef0424b3c4ef">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptSet" project="ClockWork.ScriptBuilder" file="b5684d6d-1423-76ce-7712-f8d450fa14da" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptSet.#ctor" project="ClockWork.ScriptBuilder" file="dd963388-94c2-58e1-9b1b-221af79ccef8">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor" project="ClockWork.ScriptBuilder" file="03f3d1dd-1fe2-a50c-2307-e09f8c59b931" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="9773f8d2-5fb1-2d48-df82-db410e9e9c13" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="df124c12-64cc-0e97-5b76-76d5ba6100c6" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="bceda76c-76c6-cb33-8cfc-03b428faa01e" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="0f8ea5ac-f14f-c7e7-f4b3-5c05d2b8786b" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="4a14999a-997c-f265-5a25-564b99843965" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptSet" project="ClockWork.ScriptBuilder" file="7a2c0e26-cd21-3106-a5aa-d7833bcc1c83">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.System#Collections#Generic#IEnumerable{T}#GetEnumerator" project="ClockWork.ScriptBuilder" file="26036a4f-79ff-ae03-5c9e-9c26d239cf42" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.System#Collections#IEnumerable#GetEnumerator" project="ClockWork.ScriptBuilder" file="f58c9b92-5b54-fe3a-b959-78dcf643728e" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.Add(System.Object)" project="ClockWork.ScriptBuilder" file="781479d0-62a4-c2cc-e6b2-006922108487" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.AddRange(System.Object[])" project="ClockWork.ScriptBuilder" file="199a183c-21b6-a893-fa5b-71bf6f507909" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)" project="ClockWork.ScriptBuilder" file="0446be41-9ca2-8eab-b795-9cf0378c634d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.Clear" project="ClockWork.ScriptBuilder" file="a487c74a-2303-b236-500d-ee1f3c34cfed" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.Contains(System.Object)" project="ClockWork.ScriptBuilder" file="43c19e18-52d7-6d13-c68f-5aec6f9ba56d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.CopyTo(System.Object[],System.Int32)" project="ClockWork.ScriptBuilder" file="24dc8ec4-4ab2-63d8-d56c-278155baf75e" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.IndexOf(System.Object)" project="ClockWork.ScriptBuilder" file="a653c247-1a38-53b9-cd01-aa7659aa867a" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.Insert(System.Int32,System.Object)" project="ClockWork.ScriptBuilder" file="fc580797-5083-abbf-6939-ccd45bdc08a3" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.InsertRange(System.Object[])" project="ClockWork.ScriptBuilder" file="8998c955-aa25-e76d-b596-16253b4ee343" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="393a652e-0a3a-e289-0144-38e8d2690e2d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.RegisterItem(System.String,System.Object)" project="ClockWork.ScriptBuilder" file="a8b7ec03-b5c9-b615-acfd-5b0fec6d738c" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.Remove(System.Object)" project="ClockWork.ScriptBuilder" file="8d0ed3d4-3fc5-d305-7c6f-0a1f9efe48da" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.RemoveAt(System.Int32)" project="ClockWork.ScriptBuilder" file="c29abeeb-41c3-b540-aba9-8e710ccf5622" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptSet.Render" project="ClockWork.ScriptBuilder" file="2c51760b-0a57-55b2-043d-31857e786c5a" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.ToString" project="ClockWork.ScriptBuilder" file="bde88c1f-bc20-cc18-e601-86eab08fb927" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptSet.TrySetLayout" project="ClockWork.ScriptBuilder" file="f3c70b95-5744-80a3-545b-472dfd447d55" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSet.WriteSeperator(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="cf98ca61-9fb8-5e32-1ea6-f832665c90bb" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptSet" project="ClockWork.ScriptBuilder" file="566e717d-f603-779a-b149-bb18134b495b">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.Count" project="ClockWork.ScriptBuilder" file="6a625f54-7942-6654-57a2-2ff6f9ed4e40" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.HasRenderContent" project="ClockWork.ScriptBuilder" file="8e633b0d-408e-11f9-d440-44051e0ae442" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.HasRenderContentInSet" project="ClockWork.ScriptBuilder" file="a4c55959-1ac7-8e30-6a15-8f2218269ed2" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.IsReadOnly" project="ClockWork.ScriptBuilder" file="fa16c646-c695-c345-584f-1b20b8de0e04" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.Item(System.Int32)" project="ClockWork.ScriptBuilder" file="4a034031-45b2-cc12-5b17-03fd2f11260b" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.Items" project="ClockWork.ScriptBuilder" file="14138b8a-83c6-89a0-d489-a5014ed0f856" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.ScriptIfResult" project="ClockWork.ScriptBuilder" file="1aca8d28-df67-8b17-17d1-8f9be337b178" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSet.Seperator" project="ClockWork.ScriptBuilder" file="d05b2078-c34c-35b6-725c-a986ad42d412" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptSet" project="ClockWork.ScriptBuilder" file="d06c6818-d364-085d-a5df-b10d8a1ca84a" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptSetWrapper" project="ClockWork.ScriptBuilder" file="e53ac1ea-81e4-5a64-c737-e6377b3f5997">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptSetWrapper" project="ClockWork.ScriptBuilder" file="b822dcd6-fb34-3073-69e4-b88d661fa218" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor" project="ClockWork.ScriptBuilder" file="de92ed7b-77b6-9fbc-779b-84167aa18405">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor" project="ClockWork.ScriptBuilder" file="52fd1fd3-f6a0-f15e-f449-e25d8153bafd" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="46476a1e-84f6-bde5-c962-d1bc0110f888" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="3884d980-d909-9c2c-2fb9-449ddbca71b5" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="68d6e68f-a88e-3157-bfd0-78321c2adf96" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(System.Object,ClockWork.ScriptBuilder.ScriptSet,System.Object)" project="ClockWork.ScriptBuilder" file="cf1b78dd-2b76-fa88-f0d7-0f1246ccacbd" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.ScriptSet,System.Object)" project="ClockWork.ScriptBuilder" file="8a83e15a-90cb-7f7a-7c7d-f6f3772eeeaf" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptSetWrapper" project="ClockWork.ScriptBuilder" file="212bbd27-82e8-23f3-fd9a-562418618bb5">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.System#Collections#Generic#IEnumerable{T}#GetEnumerator" project="ClockWork.ScriptBuilder" file="2b1b521d-ae77-dbdc-837d-d4dd87c7f551" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.System#Collections#IEnumerable#GetEnumerator" project="ClockWork.ScriptBuilder" file="f873b161-a028-af58-91ea-0a581b95edf0" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Add(System.Object)" project="ClockWork.ScriptBuilder" file="f5a1021d-47e4-dbf5-a53b-815fa96aac4c" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.AddRange(System.Object[])" project="ClockWork.ScriptBuilder" file="8703e80b-c761-1f1a-eed7-d5589cf38515" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Clear" project="ClockWork.ScriptBuilder" file="9fef6463-2d57-5311-af66-1d6b4323a1d0" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Contains(System.Object)" project="ClockWork.ScriptBuilder" file="0dba28ad-a049-7a72-1838-f34b93439515" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.CopyTo(System.Object[],System.Int32)" project="ClockWork.ScriptBuilder" file="997d46c0-adf8-5c48-2eb8-3ae6ec38b767" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.IndexOf(System.Object)" project="ClockWork.ScriptBuilder" file="df44fdba-5d8f-ddf2-4632-667bf4d81897" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Insert(System.Int32,System.Object)" project="ClockWork.ScriptBuilder" file="aba8dc99-0570-e6e9-5e33-bed51176e9c9" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.InsertRange(System.Object[])" project="ClockWork.ScriptBuilder" file="9c67f506-aa20-9c39-8a9e-ed8fb4134a41" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Remove(System.Object)" project="ClockWork.ScriptBuilder" file="a891c19a-8296-96ab-aaff-c5ef0c14c451" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptSetWrapper.RemoveAt(System.Int32)" project="ClockWork.ScriptBuilder" file="d91dabdd-ab14-3c79-5033-b13251dd87ff" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptSetWrapper.Render" project="ClockWork.ScriptBuilder" file="3dd507a4-f9e1-dae2-13b4-2e5f277183ee" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptSetWrapper.TrySetLayout" project="ClockWork.ScriptBuilder" file="d92a7fbd-14c8-5ce8-322f-6d566a16b212" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptSetWrapper" project="ClockWork.ScriptBuilder" file="519ece3a-f37b-f5d4-fa27-8d035d39d79a">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Count" project="ClockWork.ScriptBuilder" file="d39f4e06-fadf-d2a5-58a6-ab3bd1ad8e5e" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSetWrapper.IsReadOnly" project="ClockWork.ScriptBuilder" file="e0dcbcf1-2573-b29c-b099-481ea917a18d" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Item(System.Int32)" project="ClockWork.ScriptBuilder" file="91416972-b78c-4fe6-a7e6-ebf7435600ea" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Set" project="ClockWork.ScriptBuilder" file="6a3eece9-cb67-c84a-e518-1ae307194949" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptSetWrapper" project="ClockWork.ScriptBuilder" file="91d9be30-31b4-39b4-2671-c4f52b64c1b1" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptWrapper" project="ClockWork.ScriptBuilder" file="984801df-0a4c-cbd9-4016-a510790b9c40">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptWrapper" project="ClockWork.ScriptBuilder" file="443f91a2-f6ae-dbd1-c840-568ba33ed4be" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptWrapper.#ctor" project="ClockWork.ScriptBuilder" file="717152bc-c82f-fed6-e747-c42fb6113136">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor" project="ClockWork.ScriptBuilder" file="69ca0465-580a-c229-c909-79d4f8fd4c5d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="79ed6855-bea0-a865-69fe-fc90e8446fce" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="4249349a-588c-78be-bf17-7fe071342b87" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="f9d2942b-64c2-153e-5a37-250d1f7665e8" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptWrapper" project="ClockWork.ScriptBuilder" file="e3ea09fa-6774-507e-6886-0be906efe992">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)" project="ClockWork.ScriptBuilder" file="e6cdbedb-b582-ff0e-7197-f0134171767d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="fa2ae6ae-1d80-61c9-2066-4dcc1d4f8924" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWrapper.Render" project="ClockWork.ScriptBuilder" file="ce53fb59-fac7-56a1-ee57-a54c69bba43b" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWrapper.SetWrapper(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="634518d4-6c3d-8d11-ce7a-b6a681668e01" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWrapper.TrySetLayout" project="ClockWork.ScriptBuilder" file="c6d8c00d-7880-2a53-4309-9d0eff3806be" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptWrapper" project="ClockWork.ScriptBuilder" file="ec918c82-5e73-e754-78e7-b12cd5e3c55d">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.After" project="ClockWork.ScriptBuilder" file="23003f0b-ea3f-937e-4b8e-04418b14df18" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.Before" project="ClockWork.ScriptBuilder" file="40063fd1-3ba9-df74-31b7-9edd2acb3482" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.Content" project="ClockWork.ScriptBuilder" file="1cd03e2a-714e-a0a4-07e4-fa8b168eb301" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.ContentLayout" project="ClockWork.ScriptBuilder" file="d524c8ac-3b8d-5135-8614-cbcb01a19a17" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.HasRenderContent" project="ClockWork.ScriptBuilder" file="9b37c13b-dcc5-2be8-a934-486fc8317ada" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.InternalIndents" project="ClockWork.ScriptBuilder" file="3e580d68-f86d-b532-72c7-5cd47fc5ebe8" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWrapper.ScriptIfResult" project="ClockWork.ScriptBuilder" file="6e9f1660-b9c6-5f0c-994b-0a7c1aefce54" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.ScriptWrapper" project="ClockWork.ScriptBuilder" file="8665175b-218a-7913-4c72-71eb56abeb16" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.ScriptWriter" project="ClockWork.ScriptBuilder" file="472ff334-2dd5-cec1-e9b8-cf6f1dd9172a">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.ScriptWriter" project="ClockWork.ScriptBuilder" file="9af01492-e437-7d25-9200-5784bdbbfc73" />
+      <topic id="Overload:ClockWork.ScriptBuilder.ScriptWriter.#ctor" project="ClockWork.ScriptBuilder" file="9ca19990-df43-c890-5ebb-fd6b42db77be">
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream)" project="ClockWork.ScriptBuilder" file="77b1124a-6672-513b-6336-3945bcf9beb6" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter)" project="ClockWork.ScriptBuilder" file="a626b912-1047-830f-6874-9ba484d0378b" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream,ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="600bf447-31a4-530c-1cac-1929ddf0bb74" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="8ffbe747-9a3b-a467-3325-906002c23e9d" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter,ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="deab53ae-e46d-f876-a4c2-ba17f8f3e9ce" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="378b0cbc-bb7d-890f-2b33-2f476fad9751" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.ScriptWriter" project="ClockWork.ScriptBuilder" file="4072b24d-95e3-569f-1612-6c12159e1188">
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWriter.BeginIndent" project="ClockWork.ScriptBuilder" file="124421d8-4c3e-b2e8-7959-76180c76cfaa">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.BeginIndent" project="ClockWork.ScriptBuilder" file="6d25a22c-6a0e-9d01-bfeb-8d47d8e8ea52" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.BeginIndent(System.Int32)" project="ClockWork.ScriptBuilder" file="bdb830bb-fa15-b077-919e-47266367b832" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.Close" project="ClockWork.ScriptBuilder" file="bc611f22-7c75-0f24-f474-7d90065cf440" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.CopySettings(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="a65cfb3e-2793-ee19-b752-9fbb1f978986" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWriter.EndIndent" project="ClockWork.ScriptBuilder" file="58b8a5fe-3a08-62b0-f44a-da1170ad74d1">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.EndIndent" project="ClockWork.ScriptBuilder" file="2fd82749-c425-a79e-e155-03671b282383" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.EndIndent(System.Int32)" project="ClockWork.ScriptBuilder" file="56cc8158-2997-1d46-079d-5a77807907e3" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.Flush" project="ClockWork.ScriptBuilder" file="21433b62-afa9-888b-ee7a-2ce09c30a761" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWriter.Format" project="ClockWork.ScriptBuilder" file="613d6f54-1cee-85f1-d998-abe7183a4a3f">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.Format(System.Object)" project="ClockWork.ScriptBuilder" file="f82ed08e-bc47-5dd7-e674-ad8c3317475a" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.Format(System.String,System.Object)" project="ClockWork.ScriptBuilder" file="b8ae6fcf-601b-8a06-cd00-60c8ce32c450" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.ToString" project="ClockWork.ScriptBuilder" file="08d26072-84c3-7281-22ad-bcf05112eebb" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.Write(System.Object)" project="ClockWork.ScriptBuilder" file="25a1503b-820a-b83e-3ead-7a1bb41931e9" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.WriteIndent" project="ClockWork.ScriptBuilder" file="a79dfd26-4450-d11f-db8d-9d53df082e65" />
+        <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLine" project="ClockWork.ScriptBuilder" file="18b5d6f5-70f2-5dcb-6f87-cde5f2757a02" />
+        <topic id="Overload:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLineAndIndent" project="ClockWork.ScriptBuilder" file="81496239-1fe8-6410-e545-a25062a24a73">
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLineAndIndent" project="ClockWork.ScriptBuilder" file="d187aee9-8d0d-5bbf-31a3-471dd8113e82" />
+          <topic id="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLineAndIndent(System.Boolean)" project="ClockWork.ScriptBuilder" file="72860338-fdb8-c0fe-aac5-83bb6cdedfb1" />
+        </topic>
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.ScriptWriter" project="ClockWork.ScriptBuilder" file="6943abe7-c2b4-cdbf-5e19-9704dcb54bc5">
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.Compress" project="ClockWork.ScriptBuilder" file="09815e3f-8592-f1f2-3096-57403b037313" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.CurrentIndentLevel" project="ClockWork.ScriptBuilder" file="9a4fc15a-0f48-5efe-08f7-842875178a88" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.FormatProvider" project="ClockWork.ScriptBuilder" file="dd24c5ae-30ab-299f-dc5a-f1011505bbfa" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.IncludeIndentation" project="ClockWork.ScriptBuilder" file="488facb3-b593-d1f2-50bb-02c000d4b1fd" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.Indents" project="ClockWork.ScriptBuilder" file="e849c079-b70f-448c-a843-c18deb81d0c1" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.IndentString" project="ClockWork.ScriptBuilder" file="de3e1220-00fc-0e3b-7c7d-8bdb5ef3a27e" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.IndentText" project="ClockWork.ScriptBuilder" file="307768af-52b6-fd5a-4570-9e6243a7f63f" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.IsStartOfLine" project="ClockWork.ScriptBuilder" file="79bf2634-060b-6ecc-f62c-5077c97784df" />
+        <topic id="P:ClockWork.ScriptBuilder.ScriptWriter.NewLine" project="ClockWork.ScriptBuilder" file="e727da3c-b2c4-1620-c691-fc04fe7929f9" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:ClockWork.ScriptBuilder.JavaScript" project="_Namespaces" file="5f500310-cbd9-ddb3-d023-64f8c0520e61">
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.Js" project="ClockWork.ScriptBuilder" file="3023ab07-8821-e792-c5a5-05e53e407920">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.Js" project="ClockWork.ScriptBuilder" file="6ddf876f-b3b6-9152-8e26-30cf41b69e94" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.#ctor" project="ClockWork.ScriptBuilder" file="ccc27bc8-f1aa-bfd5-a5ed-46d9f6a8053a" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.Js" project="ClockWork.ScriptBuilder" file="194669dd-d0d3-2ea8-dbb9-9d742cc177e3">
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Arguments" project="ClockWork.ScriptBuilder" file="1091bb77-a15a-d7bb-6a1d-b4424f26e717">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="ce922541-e38d-7466-bab6-41d40fbd82a4" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(System.Object[])" project="ClockWork.ScriptBuilder" file="470a707c-e570-8f6d-8659-8bbc500f2092" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="df1d5044-d840-3606-22e4-1f5286f92230" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="e21bfba1-041a-dc84-1c9e-5cef804baa69" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Array" project="ClockWork.ScriptBuilder" file="f5df0184-0c01-48b2-bf8b-434722eda445">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="fccb5263-d068-7343-80b2-81e393c904d8" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(System.Object[])" project="ClockWork.ScriptBuilder" file="6ccac20d-8be3-d461-4ebb-a0c6411668cc" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="10e926f0-b8d7-5d72-73f4-ec5a0a4d06b2" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="052a7bfb-8148-0e46-90ee-fb33019a2480" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Block" project="ClockWork.ScriptBuilder" file="49cae832-ddcd-491d-6e6a-2dc5e8f3c4f8">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Block(System.Object[])" project="ClockWork.ScriptBuilder" file="6284b140-d3f9-bc5c-5d55-b0f9f6bfda1e" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Block(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="c7b09431-5eeb-7973-6296-2909e1a562c8" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Call" project="ClockWork.ScriptBuilder" file="f134ef16-afc0-b3d1-b1bc-f95c1c380757">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="071f663e-2792-8ad0-9452-c4360886d31f" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="6e0b00c1-f413-e407-c7f0-4b7880f79d1d" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="603ce8c7-a855-d87f-5909-28c52d23f165" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="1d69ba7f-f63e-c8c7-86af-e14abd4be4ff" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Function" project="ClockWork.ScriptBuilder" file="512f143d-29d6-4d72-ec25-5efa7ab958dd">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="af8f03a4-b463-7cf4-fada-132de8321326" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object[])" project="ClockWork.ScriptBuilder" file="58ef3076-12f1-4ae8-2067-998c7594d2d8" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="6eea505b-0993-b1d5-8a39-2f92dc356fdb" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="79b239bf-e42a-dd72-b522-ab07d245cf6e" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="5db956d9-6d38-002b-8293-c9fa3b90bc48" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="43949084-9953-60c8-56bc-09800b6c6966" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="7d1a7a2b-4b46-f0cc-5f5e-66a82d0b7831" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="0e5727da-df8f-9a46-479d-2c7f188f9e81" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="d68dea9d-043a-0b69-6c33-0e54eab77066" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="386ccd13-acb1-e040-9fd4-10e2b61bd057" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="fa51007d-b18b-d9a7-b756-af3788dc897c" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="7fce9060-6069-b74c-e42d-9e4747fa77d7" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="33e7053d-a797-8250-067d-61a26f1e366b" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="27e2332a-5633-105d-ffa4-1ebe6c75ce70" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="8b4c1791-cc5a-ad4e-cec3-d6de94850f58" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="57dfd846-4652-f53f-a129-07cd9b73e31c" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.If" project="ClockWork.ScriptBuilder" file="c3dbf3c5-668c-e38d-de99-8bb10c454137">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.If(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="510b79e6-ea31-ad61-2f51-969fc4f9aca7" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.If(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="101a0549-7965-73e9-ef22-13ad91dcf81c" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.If(System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="252a9a6c-ff85-d827-86b9-08b1c55eba2a" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.If(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="58c9017e-0935-8b12-8aa6-fb8a26495dd9" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.List" project="ClockWork.ScriptBuilder" file="e72ceb28-792f-dee4-975d-0f661dacc3fe">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.List(System.Object[])" project="ClockWork.ScriptBuilder" file="d4c472c0-13b2-b29a-e64f-d69dde16417d" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.List(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="f3807049-c248-662a-bfe5-23efa555888c" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.New" project="ClockWork.ScriptBuilder" file="1e566ec0-ee07-f216-3893-11309a137100">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.New(System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="c41a0b5f-8544-3287-3a81-4f626f82a21e" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.New(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="ca31b49b-163d-a3ad-b213-bf07b84617ef" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Object" project="ClockWork.ScriptBuilder" file="19b87495-8d40-b33c-1d6d-6012d21c5248">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Object(System.Object[])" project="ClockWork.ScriptBuilder" file="646a1d8d-d02f-5efe-6d19-eb1039fedc4a" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Object(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="3023fd37-c857-3e6e-4ac2-1186640f2c28" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Parameters" project="ClockWork.ScriptBuilder" file="a9aad75a-710e-cb91-b6c4-4949671ac22d">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="edc16b8c-0f34-e20c-b7b4-aac283b43abc" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(System.Object[])" project="ClockWork.ScriptBuilder" file="d16c6c94-a6b3-55f7-1b55-6ba04777438d" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="43af9bbe-0b26-67de-0442-9badfaed05c5" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="9e6fc7f5-ccd7-838b-5544-ad8cf3e3e1cf" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Property" project="ClockWork.ScriptBuilder" file="2be3e3fe-4cf5-169f-660c-7bc5c9727bc2">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Property(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="c8375dd9-92c4-c7a5-cf00-12056eefcf4c" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Property(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="f83c1464-d5d2-1920-7032-652844cdf138" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Q(System.Object)" project="ClockWork.ScriptBuilder" file="7c10fe5a-fd59-1edd-943f-bb6c1d40ece2" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.QQ(System.Object)" project="ClockWork.ScriptBuilder" file="6ed1d0fa-d40a-9d06-ee53-c64fe2f8ed5c" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Quote(System.Object)" project="ClockWork.ScriptBuilder" file="82005cb7-b4e2-d843-e26b-9b3d39041d39" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.QuoteDouble(System.Object)" project="ClockWork.ScriptBuilder" file="a0cadb80-abf0-18ad-0e41-eff36abaadc5" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Render" project="ClockWork.ScriptBuilder" file="702cd555-aa43-3bf9-50ff-6e2a7061fdfe">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Render(System.Object)" project="ClockWork.ScriptBuilder" file="68d28766-cca1-db94-3a87-cef2f2462c0a" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Render(System.Object,System.Int32)" project="ClockWork.ScriptBuilder" file="45e5216a-f810-4b33-fa28-39c6c183d436" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.Js.Statement" project="ClockWork.ScriptBuilder" file="6adea5dc-3729-401a-a82e-08aa9cdd8c46">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Statement(System.Object[])" project="ClockWork.ScriptBuilder" file="e7ba475b-b81b-ad83-8af4-ef58e12e6c46" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.Js.Statement(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="ae7f60d2-29ff-b997-0f48-722374e2a581" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsArguments" project="ClockWork.ScriptBuilder" file="adac58cf-57d2-f217-c07b-c3dc479e9d10">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsArguments" project="ClockWork.ScriptBuilder" file="e9b1e564-01bb-3dba-aaa7-795fb3b46c4e" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor" project="ClockWork.ScriptBuilder" file="48889105-ecd1-5200-b873-8c365c6e40d5">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor" project="ClockWork.ScriptBuilder" file="3ce6cee0-1360-b3bd-4201-8d4030a32ac5" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="43e1ce2a-4949-2a8a-d9ce-34a10981987d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="d70b1d29-d515-5708-ac63-b18d3118e153" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="763cb170-8891-1fca-2df9-78e3a7413a0e" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="f41cc220-5b71-9c9a-db9c-91a4b8b9a47d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="f43b4c96-ca0d-f897-0140-20bf70292ee1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="89bb5afb-34e6-ec3e-a199-781523f06e3a" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="b99ff7e8-6708-149f-74b4-f997a3b01fe3" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsArguments" project="ClockWork.ScriptBuilder" file="db737846-71c4-ae51-cc6e-d8fff791ae11">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.OnInitialise" project="ClockWork.ScriptBuilder" file="77dd83b8-8651-498c-4396-573c358a1095" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArguments.Render" project="ClockWork.ScriptBuilder" file="67d78e46-d6da-6bc0-5101-160550b3256a" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArguments.TrySetLayout" project="ClockWork.ScriptBuilder" file="73dd3adf-3cb4-5300-2fb6-fbf38fc89c7d" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsArguments" project="ClockWork.ScriptBuilder" file="016c6916-5a7d-1591-7ffb-74d9beb33d22">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsArguments.List" project="ClockWork.ScriptBuilder" file="58ddb054-0222-4bf1-a368-8ccf898f7473" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsArguments" project="ClockWork.ScriptBuilder" file="70e31afc-b5fd-e147-f661-08989e88e241" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsArray" project="ClockWork.ScriptBuilder" file="d659d2d9-eb01-8bc8-b7a5-b30092aebd09">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsArray" project="ClockWork.ScriptBuilder" file="407eb7ff-36f7-7bb7-49f7-b8a09f5d03b4" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor" project="ClockWork.ScriptBuilder" file="41a6b2d8-5cb2-9d3f-3437-d849fb472e0a">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor" project="ClockWork.ScriptBuilder" file="33b461a3-a700-24eb-33db-99592aae4ed5" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="53d4d36e-5100-ed53-613b-ea40f50a8776" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="62b94fad-b27c-790e-0f11-eadb2b4fa3de" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="26538e69-7844-8946-5b5b-b13837a76ee1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="b12c6da4-0eca-d7ae-e8ef-e3ac72e83ae8" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="14b7839f-b2c8-e0cd-235b-44769a0feb3f" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsArray" project="ClockWork.ScriptBuilder" file="26b0e04b-9082-2f61-26fb-ca5092adbbfa">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsArray.OnInitialise" project="ClockWork.ScriptBuilder" file="1a7c30a7-76d6-6d46-8eb3-ffdde2df6fa2" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArray.Render" project="ClockWork.ScriptBuilder" file="366ee72e-d0c1-0ec7-4d8a-1473331eae9f" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsArray.TrySetLayout" project="ClockWork.ScriptBuilder" file="9181a8a6-9617-a966-0f4e-58fd0bf92244" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsArray" project="ClockWork.ScriptBuilder" file="2310cb1e-7500-6516-9a9f-37efc8f28427">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsArray.List" project="ClockWork.ScriptBuilder" file="5bef0aca-756b-b67b-303f-e78e5651c30f" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsArray" project="ClockWork.ScriptBuilder" file="3e07b476-7f8a-d63c-dcb0-38e2c2bb8053" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsBlock" project="ClockWork.ScriptBuilder" file="da2ce056-cf86-38b2-795f-65940e6f9644">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsBlock" project="ClockWork.ScriptBuilder" file="21ddc261-2426-5d06-02f7-7c468793c657" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor" project="ClockWork.ScriptBuilder" file="60698601-1503-15ff-bb6d-17dbacb9183a">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor" project="ClockWork.ScriptBuilder" file="db49e25b-e762-e95c-8b2a-bd4bcadac7b5" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.Script)" project="ClockWork.ScriptBuilder" file="e31cc7e8-5a4f-b9b3-ccf1-4acfa7ccb751" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="babb2d65-b88b-6f58-1dd6-9187b8c0adce" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="b66b03ad-a3d2-ef24-37e5-5a21ae7b1444" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="8c37e37b-cb56-9cd4-a086-81e1477239b3" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.Script)" project="ClockWork.ScriptBuilder" file="d0d893f7-c30d-d54b-517a-d8aef5e934f8" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="2eaf3cb0-0e0d-a7c5-a14e-ee4a34f2efb7" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="476a47a6-bc86-b466-2a7d-95144e784903" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsBlock" project="ClockWork.ScriptBuilder" file="720a6f90-e794-7654-3685-bbb9a132c5be">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.OnInitialise" project="ClockWork.ScriptBuilder" file="a508eace-734a-ed54-8b4a-7f6462627c2e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsBlock.Render" project="ClockWork.ScriptBuilder" file="f53e4427-7e14-b534-7d44-392024dc407c" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsBlock.TrySetLayout" project="ClockWork.ScriptBuilder" file="84d2668a-69a8-eaa9-ecc0-29c594250189" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsBlock" project="ClockWork.ScriptBuilder" file="1d3b9e13-fde7-6ca7-971e-07dfbcb0450f">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsBlock.DefaultLayout" project="ClockWork.ScriptBuilder" file="59bb76c5-68a4-654f-2e34-f5a6c4334d9c" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsBlock.Script" project="ClockWork.ScriptBuilder" file="a3d03453-7c37-f12a-6ef2-3a0fca3746d3" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsBlock" project="ClockWork.ScriptBuilder" file="1600fac8-49c5-c44d-e95e-0d6128c8f3c2" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsCall" project="ClockWork.ScriptBuilder" file="47e5a676-99af-1371-fdef-2ca81637cb36">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsCall" project="ClockWork.ScriptBuilder" file="9edcab3e-9709-6008-9e3a-172271dcff60" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor" project="ClockWork.ScriptBuilder" file="98dbc879-d3ce-953a-b408-edc51f0513e6">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="f3be8938-e9c1-5bdf-6c73-a733b502853a" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="9e993a2b-a684-b059-6649-61fceed41e10" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="5ba3a443-2ac8-014f-93cd-56994edc0a69" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="b808007e-932e-1d36-37df-7505d927db12" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsCall" project="ClockWork.ScriptBuilder" file="fc19f3e9-5d07-99e7-3e20-9833fe71a0f4">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsCall.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="e8907923-dbe3-e82d-6fda-710755ed2d66" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsCall.Render" project="ClockWork.ScriptBuilder" file="be624eb8-9770-63d0-1394-f97f7596aab8" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsCall.TrySetLayout" project="ClockWork.ScriptBuilder" file="4c619e34-3855-76f2-4c58-45373c7aee6b" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsCall" project="ClockWork.ScriptBuilder" file="80487d30-db6e-bb2d-38b0-12c3c2e1df10">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsCall.Arguments" project="ClockWork.ScriptBuilder" file="394063f5-097c-9011-de39-a35cc29d115f" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsCall.FunctionName" project="ClockWork.ScriptBuilder" file="905687bd-e5a8-2981-bea4-ca3bb602884e" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsCall" project="ClockWork.ScriptBuilder" file="15dfe87c-545b-77a2-8b17-a061dc831e55" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider" project="ClockWork.ScriptBuilder" file="0c05068e-e14b-a241-c033-1dd7e4e05900">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider" project="ClockWork.ScriptBuilder" file="70888e5d-d8b5-868d-e665-b9dcc81957e2" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider.#ctor" project="ClockWork.ScriptBuilder" file="8ee5f696-e5c8-424a-4ecf-2498107feabe" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider" project="ClockWork.ScriptBuilder" file="2d4084a1-76fc-eb15-59c0-aa4f6a312923">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider.Format(System.String,System.Object,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="b8764aa1-4d5f-3b91-c784-4457a61c2225" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider" project="ClockWork.ScriptBuilder" file="c58b605b-6251-9f10-219c-d1897a63969c">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider.Instance" project="ClockWork.ScriptBuilder" file="4ea8c50c-3f38-d0c1-7252-567cfb242c00" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsFunction" project="ClockWork.ScriptBuilder" file="9e1bf967-862c-7fa2-0df8-adfb12c077f1">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsFunction" project="ClockWork.ScriptBuilder" file="129754d4-4942-86d1-03c0-2b2301cfed80" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor" project="ClockWork.ScriptBuilder" file="6f192dd4-dfe7-59b7-a86b-3fa9d1a42ae0">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor" project="ClockWork.ScriptBuilder" file="c23aa4c3-988b-3f16-d609-9eac9bcaab0d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="88fcb4cb-9a07-75b7-64a2-7cd8feff60a8" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters)" project="ClockWork.ScriptBuilder" file="bed2d19b-fda6-4934-424b-fbe193189a42" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="88c3a7a3-6471-15f3-4c27-cc50adaa1eeb" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="3415c599-6b81-1ab2-d3b5-3a9e8e2d6a57" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="50dd3761-eabd-4780-ae54-cde9fb3c7797" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="376ed270-f96f-071b-929b-f463120cf2ff" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="a47e593c-0ba2-1d4d-b267-2c173aceb8eb" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters)" project="ClockWork.ScriptBuilder" file="69186889-8d9b-8b84-831d-073370d34cb3" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="3fafa244-bda0-874e-ce7b-543ca3002d40" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="6db67463-6eb4-2e24-f54c-d18849009fc9" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="ec8d1934-19ba-2bbe-df65-6b7a9c0e1b44" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="c522cb20-6c3a-ef4a-a58e-965f1db2f57f" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="c8376209-0fa6-0dd0-16a4-ac4b577187d1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="a174d9a8-1b14-54aa-1fc3-bae52d212158" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="0f4fcaea-c3a6-2ff2-4b26-46e912244721" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="b738703c-34c0-9964-56d2-27e1b8f3b919" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="a1c56c14-ea78-5832-4ef7-31bbd4f72626" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="4a208358-4d21-9343-e8d5-85a08e2c0b3d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])" project="ClockWork.ScriptBuilder" file="377398a5-c597-226c-b7df-1caf0748ac8d" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsFunction" project="ClockWork.ScriptBuilder" file="67859bfd-c594-0aa7-b7ad-b4f918bbaf98">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)" project="ClockWork.ScriptBuilder" file="5298145b-2dbc-6c92-4d7a-c77d2bea742c" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="91792b4e-6ef6-6d08-1861-41fe4aed427d" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsFunction.Render" project="ClockWork.ScriptBuilder" file="0ae5340e-a12c-432c-d6eb-ca2d6acd4006" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsFunction.TrySetLayout" project="ClockWork.ScriptBuilder" file="06fca3dc-cbb9-e91c-6230-be39b604a5df" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsFunction" project="ClockWork.ScriptBuilder" file="a826b423-60ad-5b85-6afd-3a2915962cc2">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Block" project="ClockWork.ScriptBuilder" file="026c38f4-227f-a5f8-b38e-59e6f98b4fb4" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.BlockLayout" project="ClockWork.ScriptBuilder" file="0de12916-90f4-c3f4-9ea9-b05ec2a218e3" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Name" project="ClockWork.ScriptBuilder" file="087803f8-a339-b805-bd7f-288cbe146214" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Parameters" project="ClockWork.ScriptBuilder" file="468ae9b7-15d2-5152-89a4-0277980b4be9" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsFunction" project="ClockWork.ScriptBuilder" file="0d918f34-7200-69ad-89be-0f3c869b57b8" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsIf" project="ClockWork.ScriptBuilder" file="04b8954d-3a14-cc9d-7849-4dd8316ca06d">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsIf" project="ClockWork.ScriptBuilder" file="d956b8a5-99b2-88e2-34fc-5f9310e8fb5b" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor" project="ClockWork.ScriptBuilder" file="a208cabb-2bac-bdde-8e4f-1f735d09ffcd">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="712e784a-63b9-2359-e3a9-3d0161d6fc66" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="daec66f9-cb19-e21d-ede3-e48a72c5e443" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="1744ce57-e9c4-dff7-cf51-fbc044b1307d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="17ff075b-42a6-2bd2-f51c-280f6f2c33b5" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsIf" project="ClockWork.ScriptBuilder" file="2a50de79-99ef-d06d-942e-7aa2070e8554">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="8b58cbdb-a914-3e73-1cf8-01527b688556" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsIf.Render" project="ClockWork.ScriptBuilder" file="37b6b61b-4d0a-b272-835d-577d02b4905e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsIf.TrySetLayout" project="ClockWork.ScriptBuilder" file="13249a9c-5d73-f469-2352-5b440789503a" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsIf" project="ClockWork.ScriptBuilder" file="06e75ac4-3ff4-0835-02c4-63a7f1453a30">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsIf.Condition" project="ClockWork.ScriptBuilder" file="a9ba2001-5683-07ab-f1b5-7084a3deb5d0" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsIf.FalseBlock" project="ClockWork.ScriptBuilder" file="d6e0a313-2b26-323b-e62a-6f31fa915d55" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsIf.TrueBlock" project="ClockWork.ScriptBuilder" file="700af59b-f865-3b5d-10e9-ae67a7db0125" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsIf" project="ClockWork.ScriptBuilder" file="431bf14f-40be-631a-0b90-9c07794febe1" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsList" project="ClockWork.ScriptBuilder" file="6ccc9399-ac40-a6dd-85b5-8b4821817afd">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsList" project="ClockWork.ScriptBuilder" file="2d557ef7-81b4-029a-290f-a6bacf9e3338" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor" project="ClockWork.ScriptBuilder" file="20b68e4c-e326-2e0c-8733-054212a3fb17">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor" project="ClockWork.ScriptBuilder" file="b61fc0f3-cc0d-aa50-2ace-b94a353fd8e0" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="d2b473da-2b1f-6847-eaea-a807d7f434a9" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="1d88fc02-9581-3d81-d160-c00723283a7c" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="6f1bbec4-cac4-19c2-bd12-46f6adaae00c" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="30ef31ef-1788-9442-2cf5-56ead5c16cf4" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="a88d4b69-a8c1-3a13-fdb8-75bdaf38ccdb" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsList" project="ClockWork.ScriptBuilder" file="e01a4194-f49b-50a8-e313-e86cb02a4957">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsList.OnInitialise" project="ClockWork.ScriptBuilder" file="a9eb60ec-b4f9-412b-7e44-397950d97211" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsList.Render" project="ClockWork.ScriptBuilder" file="b592f310-d9a9-deca-0397-25105c88f901" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsList.TrySetLayout" project="ClockWork.ScriptBuilder" file="d7f659e1-afe2-3c8b-4f17-080190faa572" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsList" project="ClockWork.ScriptBuilder" file="d1baf20b-5cde-a3b2-9ff0-1a693c6263c6" />
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsList" project="ClockWork.ScriptBuilder" file="a340b4ad-3a76-3ffd-0eec-3da3acdf2535" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsNew" project="ClockWork.ScriptBuilder" file="095bd02b-3142-ab95-59ae-156d25cd2a00">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsNew" project="ClockWork.ScriptBuilder" file="a50cff64-9d0c-fe5a-91b2-dd68ec41de48" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor" project="ClockWork.ScriptBuilder" file="58f1f8cb-fd66-5888-ce72-6e427c273378">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.JavaScript.JsCall)" project="ClockWork.ScriptBuilder" file="0f6c5a1d-c156-7207-2077-12fe4857839a" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="abf9c327-450d-08cb-4ffa-6686aefa08c4" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="7ed4ecd2-bdff-e3a2-05c1-1132a5de43be" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)" project="ClockWork.ScriptBuilder" file="26a43b1c-9339-09c2-2b9d-2f49980010cc" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="bac29629-02b6-ef9e-23b8-e251b8b69b31" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsNew" project="ClockWork.ScriptBuilder" file="f17ffc90-2c4c-946f-680c-68efcc2d6092">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsNew.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="af5ab982-d216-d4be-0418-dcf4e6b0f707" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsNew.Render" project="ClockWork.ScriptBuilder" file="7c033529-d14f-f55f-0e1c-a3e4755302e4" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsNew.TrySetLayout" project="ClockWork.ScriptBuilder" file="6d33b915-4271-ccef-3505-a3b704f049d1" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsNew" project="ClockWork.ScriptBuilder" file="a4d643f8-fea2-2264-50ef-547106773915">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsNew.Call" project="ClockWork.ScriptBuilder" file="293c2275-4fa0-646a-a36b-6872e186b01a" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsNew" project="ClockWork.ScriptBuilder" file="27666fb5-d92e-34d5-ad38-d7805f7dd512" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsObject" project="ClockWork.ScriptBuilder" file="d483c8f5-c629-ee57-ccb3-46618ac4f208">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsObject" project="ClockWork.ScriptBuilder" file="44ee107d-4677-292e-b56b-4e01954331ae" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor" project="ClockWork.ScriptBuilder" file="b3b3f8aa-40e5-d9df-6243-1b633a91e944">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor" project="ClockWork.ScriptBuilder" file="b07492d7-94ed-a0ce-539c-e6855786a84a" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.JavaScript.JsPropertyList)" project="ClockWork.ScriptBuilder" file="3f2ef829-39ac-e2fa-0303-0e11446e8015" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="8f268593-e3fd-e568-453d-4742d9efbefb" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="0ebdd9f1-b1a7-e13d-97e5-3113b44fe4b9" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="99e99103-d104-e15a-ff3c-ee4dedac1b31" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsPropertyList)" project="ClockWork.ScriptBuilder" file="0f0beabf-1cda-6e51-6a2b-7fa265e0631d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="e025a9bb-52e8-d5ea-45d8-89ef808fba95" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="632c756c-acbb-a629-5c8c-d7833da8c10c" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsObject" project="ClockWork.ScriptBuilder" file="f90108d5-b8b3-59f6-b74d-03bad7f1fd05">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsObject.OnInitialise" project="ClockWork.ScriptBuilder" file="6de52315-8dd7-bcec-41bb-1aa70f72f039" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsObject.Render" project="ClockWork.ScriptBuilder" file="64c0637f-067c-12d7-c4b9-11918f186d6e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsObject.TrySetLayout" project="ClockWork.ScriptBuilder" file="212e8262-991e-54c1-169a-5204b7d2379d" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsObject" project="ClockWork.ScriptBuilder" file="08ef7d4a-5bf1-142d-33c8-09d9b8571fe5">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsObject.Properties" project="ClockWork.ScriptBuilder" file="01af88af-4ef8-a818-a196-69adcfde80e8" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsObject" project="ClockWork.ScriptBuilder" file="ff0383f4-abea-564b-e2fd-898705848c06" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsParameters" project="ClockWork.ScriptBuilder" file="5d34d524-deec-b8aa-dbbe-52df68850941">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsParameters" project="ClockWork.ScriptBuilder" file="5d9c36ff-1b1b-051d-fbd0-2e7bf7e96d04" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor" project="ClockWork.ScriptBuilder" file="f43c4f6e-6a91-ce5d-2588-fa63fd3bc98f">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor" project="ClockWork.ScriptBuilder" file="e2178a2c-abaf-3a83-2082-e1f9e7b04b99" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="a17ec905-033c-2743-3cc7-dd0ed76e0760" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="512bc23b-b647-06c4-57d3-13b94d5d641e" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="e917fd49-81c8-84f2-7a11-0c51e2e50ed3" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="d03dffc2-5e25-8654-2194-f660ba86f3c7" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)" project="ClockWork.ScriptBuilder" file="94e43cc2-81f6-ea36-5378-e05d3fa55898" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="6dd64249-709a-6659-92dc-58f6c6288cd6" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="10fbb009-d417-0fcb-7755-c889bf7b43b7" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsParameters" project="ClockWork.ScriptBuilder" file="2fd400d3-a110-11e2-b4ca-6a8a0bde8668">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnInitialise" project="ClockWork.ScriptBuilder" file="d5e6361c-39b6-5245-8e60-321320bc24b0" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)" project="ClockWork.ScriptBuilder" file="cbb4b706-d693-3f88-ca42-ae3fa6ad4353" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="44325020-a895-9974-e6ce-11830d860904" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsParameters.Render" project="ClockWork.ScriptBuilder" file="1d0d2310-c3ce-fb49-7360-5c04c7b2bc93" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsParameters.TrySetLayout" project="ClockWork.ScriptBuilder" file="ea9114d8-4a10-0581-66a7-67a0e3e3200f" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsParameters" project="ClockWork.ScriptBuilder" file="c581499a-efc4-d4ea-67ef-2c229b2ac546">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsParameters.List" project="ClockWork.ScriptBuilder" file="dbb173bc-ee6e-1920-ca02-7ece7335561f" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsParameters.ListLayout" project="ClockWork.ScriptBuilder" file="abe4d751-ac2c-f6e6-f59c-b8a3cd5fd8e5" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsParameters" project="ClockWork.ScriptBuilder" file="cc5516ef-8df4-b3ac-0b0b-ff7d9652c17d" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsProperty" project="ClockWork.ScriptBuilder" file="bbd39c11-b289-6265-968d-28a74024e3c5">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsProperty" project="ClockWork.ScriptBuilder" file="dce60a08-d115-405f-f8d7-c47653eb578b" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsProperty.#ctor" project="ClockWork.ScriptBuilder" file="541447e8-70f1-538e-5bc0-f42ac73b3a8d">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.#ctor(System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="02c8de5d-1f19-1c96-f2ca-0f15551549c1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)" project="ClockWork.ScriptBuilder" file="882eecf6-343a-1ea1-e1f8-690e46c28350" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsProperty" project="ClockWork.ScriptBuilder" file="695f72e5-0856-cefb-c257-cae00b9fc420">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="ba660c59-915a-fac9-4f77-f2f38226f315" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsProperty.Render" project="ClockWork.ScriptBuilder" file="8cf9f434-a0c4-a9b3-296f-61e94eba5eae" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsProperty.TrySetLayout" project="ClockWork.ScriptBuilder" file="dd558b85-3c6d-15ec-04ca-7e4450cc15a5" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsProperty" project="ClockWork.ScriptBuilder" file="da93f891-668e-d83b-4ea7-8cd4b8956ea3">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.HasRenderContent" project="ClockWork.ScriptBuilder" file="68508e0b-5de1-1836-9c78-1e6465262191" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.Name" project="ClockWork.ScriptBuilder" file="61bc71a4-ba4a-e595-46c8-7d459360eab4" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.Value" project="ClockWork.ScriptBuilder" file="2aff51ff-882b-cebf-2861-b575ebe9bb22" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsProperty" project="ClockWork.ScriptBuilder" file="21994be2-ed93-6bae-c2fa-ac8fad52fcc4" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList" project="ClockWork.ScriptBuilder" file="4ff41b31-6204-6eaf-b672-61a138af5f4b">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList" project="ClockWork.ScriptBuilder" file="bbf4c56f-7d39-eb92-1440-bec571ee5a05" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor" project="ClockWork.ScriptBuilder" file="31f4071c-a772-fb38-3bdf-e5334fe60755">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor" project="ClockWork.ScriptBuilder" file="7a55d2b5-a20e-8696-330d-004c6ccde066" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="b6f54e3d-2d4c-6850-7f7d-cc5ec5623076" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="36e720a3-c690-6c9b-465b-c16a5baea67a" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="c418e910-a17a-50ba-dd0f-9805c056eb27" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="113ac4da-414d-9710-2036-cbb256b455b4" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="7e3ce4b8-41a1-68f9-4f93-c2ad6f329a99" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList" project="ClockWork.ScriptBuilder" file="b3146ebc-bd80-51e6-8bcf-7be0e9651f17">
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.Add" project="ClockWork.ScriptBuilder" file="f4aca1db-cc14-1a0e-69ad-9e0ccd0ff456">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.Add(System.String,System.Object)" project="ClockWork.ScriptBuilder" file="3e68f14c-7a03-b717-a883-9e04a936d3f1" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)" project="ClockWork.ScriptBuilder" file="9cf27d9b-2bc9-3687-fc02-cfc76d2bd044" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.FindProperty(System.String)" project="ClockWork.ScriptBuilder" file="60f5ccc5-6221-a5de-ef51-918e9a5232f1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.FindPropertyValue(System.String)" project="ClockWork.ScriptBuilder" file="5935d3a2-7a1c-a32e-7aa4-54c62e43b661" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.Render" project="ClockWork.ScriptBuilder" file="13c4e2d1-91d0-2c8f-680e-a6546a858d8e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.TrySetLayout" project="ClockWork.ScriptBuilder" file="05eaef57-baf0-0336-efa6-d13df4861871" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList" project="ClockWork.ScriptBuilder" file="445e725f-4e22-2321-b37e-264b6980ead5" />
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList" project="ClockWork.ScriptBuilder" file="71511e53-fe6c-83ea-1314-486560c155ee" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsQuote" project="ClockWork.ScriptBuilder" file="5da5df97-fe22-ac15-401a-9e2da04c6bcf">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsQuote" project="ClockWork.ScriptBuilder" file="977a2a7a-a50a-bad4-2566-c1ffedaed1cc" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor" project="ClockWork.ScriptBuilder" file="d0b2266c-7b86-db4c-ee40-79a13892f71b">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor" project="ClockWork.ScriptBuilder" file="b7cf7842-6168-aa1c-9c5e-85a750e86c33" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor(System.Object)" project="ClockWork.ScriptBuilder" file="4dd9fce7-3d5e-9969-047c-94527e6e6f86" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor(System.Object,System.Boolean)" project="ClockWork.ScriptBuilder" file="d06e1bca-f72e-4959-c2be-1a25eb6f1c23" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsQuote" project="ClockWork.ScriptBuilder" file="f46a17c6-aba6-42c1-77c1-e7e06ef6a9a1">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="3a198e0e-aad7-5cd7-6146-482276afb9a1" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsQuote.Render" project="ClockWork.ScriptBuilder" file="bde77a44-e846-ecb2-a709-41021ce9155a" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsQuote.TrySetLayout" project="ClockWork.ScriptBuilder" file="3cbb12ed-6b95-1e40-3f4f-3e91ba0854f8" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsQuote" project="ClockWork.ScriptBuilder" file="29b97714-0b62-1fe8-6cdb-ff8e79a1449f">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsQuote.DoubleQuotes" project="ClockWork.ScriptBuilder" file="64ea83e8-f47e-0169-e7bb-7ffa91ca1044" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsQuote.Text" project="ClockWork.ScriptBuilder" file="8029e99f-b982-26ba-110c-7a3e442e48f0" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsQuote" project="ClockWork.ScriptBuilder" file="b1926827-0dfb-c649-bfbb-49d0116874c2" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsStatement" project="ClockWork.ScriptBuilder" file="57b3fdfd-2557-2c0a-257d-0b272d3c4e34">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsStatement" project="ClockWork.ScriptBuilder" file="31f03b99-8b44-6a2f-90c7-4ae4cd57f64b" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor" project="ClockWork.ScriptBuilder" file="c068271e-a4a0-2092-b519-ab3d78e88b8a">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor" project="ClockWork.ScriptBuilder" file="14297aed-31d5-19f5-19ef-a83ddc6072ec" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout)" project="ClockWork.ScriptBuilder" file="59e3c7f0-f7dc-244b-725b-a574d75d14b1" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLine)" project="ClockWork.ScriptBuilder" file="598c6960-2538-6a58-fc33-45135167e3fd" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="ff14ef5e-42a4-411d-c137-a58c3e966ff6" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(System.Object[])" project="ClockWork.ScriptBuilder" file="161ef3d1-1d79-d0b8-b806-7fc416c2ad12" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.ScriptLine)" project="ClockWork.ScriptBuilder" file="7b5f9712-ad35-7edd-6c9d-9fced6929c27" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="b904cb86-d521-e3e3-0846-1e22a8688c19" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])" project="ClockWork.ScriptBuilder" file="7f5e0b30-a631-2ff7-6178-29a41322e802" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsStatement" project="ClockWork.ScriptBuilder" file="71c05ced-a868-4825-ce37-f671aa2581ac">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.OnInitialise" project="ClockWork.ScriptBuilder" file="e73c593f-f3e9-9d5b-ad92-2c06b7fd8656" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsStatement.Render" project="ClockWork.ScriptBuilder" file="a6db5d91-a5e7-1df4-030e-7bf5a7c49066" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.JsStatement.TrySetLayout" project="ClockWork.ScriptBuilder" file="db03e32b-deb2-ce55-7df2-034717e79d8a" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsStatement" project="ClockWork.ScriptBuilder" file="3ca443e2-0edf-66c8-9f38-a4df06457fea">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsStatement.Line" project="ClockWork.ScriptBuilder" file="bc8a0862-4b4c-3492-c631-ebdcc31fb3e9" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.JsStatement" project="ClockWork.ScriptBuilder" file="02d30c45-d973-2040-c51e-afde77ac5175" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory" project="ClockWork.ScriptBuilder" file="3ea74c39-cbe1-1f99-d036-6fc1816e5bab">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory" project="ClockWork.ScriptBuilder" file="4a17e266-28a3-619e-9630-e6def0aa3bd3" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.#ctor" project="ClockWork.ScriptBuilder" file="2edb9f41-f6fd-749a-ccf5-8e46c27e29f2" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory" project="ClockWork.ScriptBuilder" file="359004b6-8fc9-6a4b-7a20-a748ef55d13b">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.Create(System.Object)" project="ClockWork.ScriptBuilder" file="6d088e37-4cc6-a8bc-4c71-97f2258d2542" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory" project="ClockWork.ScriptBuilder" file="8fb122dd-d172-c3f1-5482-6ab6c39f266e">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.LetterSet" project="ClockWork.ScriptBuilder" file="39d580ab-1eca-e4ba-88f0-6478afa2e16f" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:ClockWork.ScriptBuilder.JavaScript.ExtJs" project="_Namespaces" file="b61a544a-f6a1-7679-f8dc-94e98d7e3901">
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs" project="ClockWork.ScriptBuilder" file="87da874a-453d-bd0f-c032-8c4827449a3d">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs" project="ClockWork.ScriptBuilder" file="525b34d4-7e76-3e53-32fc-65c34d7a3361" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.#ctor" project="ClockWork.ScriptBuilder" file="c23fde78-6ec1-e4f2-d18b-5246891daf5b" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs" project="ClockWork.ScriptBuilder" file="10597b52-cd12-f4b2-a80e-1f140a0de25f">
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Apply" project="ClockWork.ScriptBuilder" file="95949e93-d9a4-7f0d-6980-b520d4500125">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Apply(ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="a8cbc483-6d77-a97e-ec83-cd860f1f670a" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Apply(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="a3198d68-94c1-5323-a2f1-c9797ee6ddef" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ApplyIf" project="ClockWork.ScriptBuilder" file="3f6a9bd3-f8bb-b72c-00ea-811ec1948a0c">
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ApplyIf(ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="c407538d-c7e1-55ad-ff0c-1fe54eee2642" />
+          <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ApplyIf(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="d74567eb-7af7-1743-47a9-b3ccf04caaf4" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.BaseApply(System.Object,System.String)" project="ClockWork.ScriptBuilder" file="a9034c7b-2d6c-4ba4-a974-79360b84f9c0" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.BaseCall(System.Object,System.Object,System.Object[])" project="ClockWork.ScriptBuilder" file="e1f5cb0b-4e2c-af24-2a75-a2f6952696f7" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Class(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="089b203c-7ee4-deff-8631-deb4f151100d" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Component(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="a6138587-c9b6-3458-d2be-c2a845812178" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ExtJsType(System.Type)" project="ClockWork.ScriptBuilder" file="f57c914b-f1ae-af01-c05f-d58070a9b526" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.GetNamespace(System.String)" project="ClockWork.ScriptBuilder" file="f60fb03a-7872-1636-90f8-8a06db3497f1" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply" project="ClockWork.ScriptBuilder" file="1b9a48bd-e565-df18-bf82-424ec7959cdc">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply" project="ClockWork.ScriptBuilder" file="1ed89ee4-de67-ecd6-7370-96819e83c398" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor" project="ClockWork.ScriptBuilder" file="625c0545-62a0-1f7b-1865-1254ccacf8d8">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="42eb5cfd-0d87-8e52-6320-e33685e7b4a7" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="71255956-afaa-9c50-ec8b-0e047d0869e9" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="719914fe-e3ba-ea49-2706-48b35e6981db" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="4f6081d2-8ee6-1132-8285-c1423ab74bf4" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply" project="ClockWork.ScriptBuilder" file="e4407b46-ac78-6556-f16a-d75f87ae5a3b">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="faaf9533-a411-20a8-5d98-0592e29b064a" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Render" project="ClockWork.ScriptBuilder" file="3eaa2d11-5b09-8d2b-5556-6eb21fd39e25" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.TrySetLayout" project="ClockWork.ScriptBuilder" file="29dc3adb-acbb-f0d7-b9d6-c9e5cdecd055" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply" project="ClockWork.ScriptBuilder" file="8f3cb7a4-99ac-ba9d-2eff-486e46e00d56">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Config" project="ClockWork.ScriptBuilder" file="4e9abb1d-df90-6a24-c449-9d0a6dd97c29" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Defaults" project="ClockWork.ScriptBuilder" file="58fbdc09-3402-7348-7691-57c4356b7178" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.HasRenderContent" project="ClockWork.ScriptBuilder" file="02facabd-c65b-3191-466a-e537656aca7a" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Receiver" project="ClockWork.ScriptBuilder" file="75eb278d-d1ff-a82c-eda8-72ba7ecf40ec" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply" project="ClockWork.ScriptBuilder" file="84a69c9e-17b2-814a-a619-d8e535a771a6" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf" project="ClockWork.ScriptBuilder" file="a08f2bb0-df78-5022-687f-ab1b73260e36">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf" project="ClockWork.ScriptBuilder" file="df4ab54d-09c6-b7f9-52f2-a50b2cf95bb3" />
+      <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor" project="ClockWork.ScriptBuilder" file="f74024d1-f95b-5f35-2766-2d87d6cc2996">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="a65674e1-311c-bd39-8909-347665a1d9ec" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="60152ab7-c9c9-fd0d-8e1e-85e2f523b945" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="cd5231a3-a810-992b-b02e-632674c1b4fd" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="1965f2bb-1417-40e3-c952-1ad5977fb4f8" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf" project="ClockWork.ScriptBuilder" file="9be8ca3c-8110-af29-93fd-7e86bcfa1ce4">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="587c3153-4c8e-d946-26a6-8be2b494868a" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Render" project="ClockWork.ScriptBuilder" file="541e4a74-02a2-f709-a377-d66787f5871a" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.TrySetLayout" project="ClockWork.ScriptBuilder" file="594500a5-eee5-b2ee-286b-25facec510d9" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf" project="ClockWork.ScriptBuilder" file="33a1a4f4-7e3a-4d8d-dd67-6356916a7909">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Config" project="ClockWork.ScriptBuilder" file="e927d832-d716-6e0c-2b2f-84dc37be989f" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Defaults" project="ClockWork.ScriptBuilder" file="8a438da6-5b34-5b5b-7abc-194518be60a7" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.HasRenderContent" project="ClockWork.ScriptBuilder" file="eccdebf1-c620-41f5-8bdd-124377eb1af6" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Receiver" project="ClockWork.ScriptBuilder" file="88d59347-6a49-140b-77be-caff1f82ad6a" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf" project="ClockWork.ScriptBuilder" file="b1919a42-53ce-5b1f-829f-b36a342a325f" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass" project="ClockWork.ScriptBuilder" file="3f75ad02-f98a-820c-1626-efa2dbdb6475">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass" project="ClockWork.ScriptBuilder" file="cd5d3b83-1df1-a4ff-adfa-488364206af8" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.#ctor(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)" project="ClockWork.ScriptBuilder" file="0c44aa15-1db8-d23d-d346-39154e36fa6e" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass" project="ClockWork.ScriptBuilder" file="c5290560-08ad-65d5-0027-1f2cedc8340d">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="349198a4-dbef-524b-cc80-108dff5eaa27" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.Render" project="ClockWork.ScriptBuilder" file="f88a678d-7306-bf6b-66c3-84002d4a005e" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.TrySetLayout" project="ClockWork.ScriptBuilder" file="d2343536-691f-43af-9a83-98bc61a40d35" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass" project="ClockWork.ScriptBuilder" file="5f086d7b-53bc-2270-f071-aeddf82799cb">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.BaseClass" project="ClockWork.ScriptBuilder" file="67bcc1ec-ad6b-70e2-8bcf-bf70f29d68fe" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.ClassName" project="ClockWork.ScriptBuilder" file="8cf2eeab-5a7a-4d1b-fd7a-08e9d8bf2c29" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.Constructor" project="ClockWork.ScriptBuilder" file="872d85d4-681f-dbfc-1789-9acd4cd5b78a" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.Parameters" project="ClockWork.ScriptBuilder" file="e40f8720-aaa0-7efa-ec70-984d1c5d68ce" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass" project="ClockWork.ScriptBuilder" file="14b20dfc-1adb-75e8-faad-5edd042a0233" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent" project="ClockWork.ScriptBuilder" file="94af3416-eeb8-fab8-6300-da810173cb93">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent" project="ClockWork.ScriptBuilder" file="a69389c5-6a02-86e6-6fa2-2010b0627ec0" />
+      <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.#ctor(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)" project="ClockWork.ScriptBuilder" file="70fb96a9-c52d-a488-8ac0-03d60e13c9c1" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent" project="ClockWork.ScriptBuilder" file="962dfc28-7ebf-e617-d75c-3e747e5e4ce3">
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.ComponentExample(ClockWork.ScriptBuilder.IScriptWriter)" project="ClockWork.ScriptBuilder" file="a8ce9d2d-ac71-2b96-0d3a-7b5a8f1bbefe" />
+        <topic id="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="a3038ec3-8649-f087-31a3-8af32718745f" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.Render" project="ClockWork.ScriptBuilder" file="b1d2a7ab-e166-50f6-d2f1-b2cd66471176" />
+        <topic id="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.TrySetLayout" project="ClockWork.ScriptBuilder" file="a7244e88-abe7-68a8-413f-d06f2801884a" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent" project="ClockWork.ScriptBuilder" file="2e295d71-00dd-009f-3254-4a09aeb3117b">
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.BaseComponent" project="ClockWork.ScriptBuilder" file="1b93a464-3b90-e8bf-0349-0278759d598b" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.ComponentName" project="ClockWork.ScriptBuilder" file="bdf9b8d2-48c2-d3cf-3933-84d8a502ba28" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.Object" project="ClockWork.ScriptBuilder" file="8670ff9c-e2dc-845b-e267-6d9eb873f6c9" />
+        <topic id="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.RegistryName" project="ClockWork.ScriptBuilder" file="75c98809-a8cf-d6d5-d161-5d535a5263ff" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent" project="ClockWork.ScriptBuilder" file="8623cda9-110c-d80c-256f-28b414f1d393" />
+    </topic>
+  </topic>
+  <topic id="N:ClockWork.ScriptBuilder.XmlScript" project="_Namespaces" file="68eb9ac8-45a9-4678-77a0-b5c173fa32f4">
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer" project="ClockWork.ScriptBuilder" file="361f7294-425b-f517-a827-6d4b1d46a9c8">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer" project="ClockWork.ScriptBuilder" file="085df78e-becf-5c02-014d-1059e216de24" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer" project="ClockWork.ScriptBuilder" file="c3cd3a48-2944-658f-234a-4fdd0ab858b5">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer.Render(System.Xml.XmlElement)" project="ClockWork.ScriptBuilder" file="14eb1778-a381-c38c-d6f7-57daf9b83f4c" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.Xs" project="ClockWork.ScriptBuilder" file="8221bc4f-495b-e3a2-e871-0abb63ebd330">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.Xs" project="ClockWork.ScriptBuilder" file="b3633d1d-9791-1308-8b4e-3a5d98cce02d" />
+      <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.#ctor" project="ClockWork.ScriptBuilder" file="fd91f7a8-1b6f-d00d-816c-1d1489e2cfae" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.Xs" project="ClockWork.ScriptBuilder" file="9eb138df-f50d-cecb-fce8-58f7330d593f">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Attribute(System.String,System.Object)" project="ClockWork.ScriptBuilder" file="8841e500-95de-991b-d51f-8eb12fd185d1" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.CData(System.Object)" project="ClockWork.ScriptBuilder" file="e66925d8-b0e3-e006-dee6-7e97f3be7035" />
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.Xs.Element" project="ClockWork.ScriptBuilder" file="561445d9-e957-e76e-2815-59c6738c747d">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Element(System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="cf4b257d-2e57-b437-2c08-bb6538e9bce8" />
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Element(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="3629bd76-0de0-a5f3-a822-09b35e4530fa" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.Xs.Render" project="ClockWork.ScriptBuilder" file="88e59ff4-fb74-326d-b79a-fd65ff946ccd">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Render(System.Object)" project="ClockWork.ScriptBuilder" file="1a7ee5eb-485a-f977-df07-f933f8a2c3ab" />
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Render(System.Object,System.Int32)" project="ClockWork.ScriptBuilder" file="4e9c4a1b-bb3c-77b2-8b99-7c3ad2702f3b" />
+        </topic>
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.Xs.Text(System.Object)" project="ClockWork.ScriptBuilder" file="bf0562e8-ede0-b609-d47a-32da74f8e4f5" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.XsAttribute" project="ClockWork.ScriptBuilder" file="7277823b-10b7-acfe-bab1-2cc0b1886ee6">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.XsAttribute" project="ClockWork.ScriptBuilder" file="48bad820-cf29-2739-ec0c-fd8bd198ff24" />
+      <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.#ctor(System.String,System.Object)" project="ClockWork.ScriptBuilder" file="955dec1e-7bed-1124-5c58-38325878f306" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.XsAttribute" project="ClockWork.ScriptBuilder" file="fdbb93b6-6761-166f-fb82-4bc4a0a90039">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Encode(System.String)" project="ClockWork.ScriptBuilder" file="05ae1593-b34c-231e-3117-08302085d896" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="680852cb-c9fd-283f-0080-05401e5d9545" />
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Render" project="ClockWork.ScriptBuilder" file="14fe4c45-1746-b628-e9b3-68491b982f16">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Render(System.Xml.XmlElement)" project="ClockWork.ScriptBuilder" file="2802b8d7-2908-2cf5-cb13-118d10ba87f0" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsAttribute.TrySetLayout" project="ClockWork.ScriptBuilder" file="900fde2d-0705-e859-4d60-cc087e964ee0" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.XmlScript.XsAttribute" project="ClockWork.ScriptBuilder" file="8256e55e-7d95-da5d-76b4-bda18460137a">
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Name" project="ClockWork.ScriptBuilder" file="64e5525f-f3f1-b177-3822-4678811defd6" />
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Value" project="ClockWork.ScriptBuilder" file="69000643-878c-2589-2254-5ad60aac952a" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.XmlScript.XsAttribute" project="ClockWork.ScriptBuilder" file="96e558f6-5d4c-0670-d100-2c704c343dff" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.XsCData" project="ClockWork.ScriptBuilder" file="014046e2-9abc-09ed-1f02-ca9d8a5b56c6">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.XsCData" project="ClockWork.ScriptBuilder" file="74a37b1c-6fdd-3cf0-0348-85e0faadd96b" />
+      <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsCData.#ctor(System.Object)" project="ClockWork.ScriptBuilder" file="c93613da-9fbc-8c14-2f13-01206cdaf7fa" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.XsCData" project="ClockWork.ScriptBuilder" file="d4d3285b-7371-7e51-ff5a-d771994fbad9">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsCData.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="c6f4cc0c-b0ba-69fc-2d87-c3cb0a9774d7" />
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsCData.Render" project="ClockWork.ScriptBuilder" file="38b1a436-7684-44c4-ff76-a47c167394cb">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsCData.Render(System.Xml.XmlElement)" project="ClockWork.ScriptBuilder" file="5ff5e074-f5a9-c088-c794-a738cd8db9f0" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsCData.TrySetLayout" project="ClockWork.ScriptBuilder" file="e8f047ff-cd17-8748-08ee-51f1aa431565" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.XmlScript.XsCData" project="ClockWork.ScriptBuilder" file="dd50ae54-b07b-48b5-42e3-d6e0c0ba40b4">
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsCData.Data" project="ClockWork.ScriptBuilder" file="6cbded5b-49a4-7fc2-10ae-92d84116770c" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.XmlScript.XsCData" project="ClockWork.ScriptBuilder" file="6fcb18be-01ec-9d7b-4d28-d9f3be928462" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.XsElement" project="ClockWork.ScriptBuilder" file="e43d165f-2294-8377-25f6-9e4a6a6d57b5">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.XsElement" project="ClockWork.ScriptBuilder" file="fb76241f-d822-1dc5-ad4f-e71ab8030e81" />
+      <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor" project="ClockWork.ScriptBuilder" file="cd4e4f7a-c0ed-a90d-d7b5-91324a88a803">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String)" project="ClockWork.ScriptBuilder" file="ddd6745a-04ee-ac0f-5966-14a5fb29bf48" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String)" project="ClockWork.ScriptBuilder" file="d5fb678f-e30f-436c-9c32-9b9ad74b8f40" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="1c7534f9-a501-c93d-b5e1-ebb31a552409" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="ebdb13a7-04ca-e094-cb49-c22a9fdfabd3" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Collections.Generic.IEnumerable{System.Object})" project="ClockWork.ScriptBuilder" file="f1c3a6a5-15e3-47c9-74ca-b1495609cdb6" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])" project="ClockWork.ScriptBuilder" file="50b0b3db-b1a5-c8fc-0edd-ba90fffec03a" />
+      </topic>
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.XsElement" project="ClockWork.ScriptBuilder" file="22ecf4c0-a973-2d07-5519-b40431202004">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)" project="ClockWork.ScriptBuilder" file="bb326e8c-459d-1c24-8ea4-a9ec1c452017" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.CreateXmlElement(System.Xml.XmlDocument)" project="ClockWork.ScriptBuilder" file="88c19e92-86f3-367d-d546-c8cf65bf52cf" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="5add5dfa-1c47-f508-469e-b5b810fef630" />
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsElement.Render" project="ClockWork.ScriptBuilder" file="a1b4995b-c58d-ef92-a608-76f1b44a36fc">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.Render(System.Xml.XmlDocument)" project="ClockWork.ScriptBuilder" file="98de8753-12d9-3377-bb9e-1fc223d3bd71" />
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsElement.Render(System.Xml.XmlElement)" project="ClockWork.ScriptBuilder" file="459e5ad3-1e06-8fa4-659a-24175a2e4e94" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsElement.TrySetLayout" project="ClockWork.ScriptBuilder" file="67dc7d65-baa4-a693-b785-5d4d8e95b3a6" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.XmlScript.XsElement" project="ClockWork.ScriptBuilder" file="2a9e3122-8ce6-52e5-e039-4d02f0aa9811">
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsElement.DefaultLayout" project="ClockWork.ScriptBuilder" file="8eb8015e-47b2-5059-2889-8bf6e9ed0699" />
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsElement.Name" project="ClockWork.ScriptBuilder" file="07e98052-a429-11f6-f19c-870809479ce4" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.XmlScript.XsElement" project="ClockWork.ScriptBuilder" file="513993c3-023c-c086-6e9b-1167c5a449a4" />
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider" project="ClockWork.ScriptBuilder" file="270171b6-e768-d39f-39bd-854ef743ddf8">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider" project="ClockWork.ScriptBuilder" file="2bf465e6-6fb0-094f-c4b9-ca0f8cc48a89" />
+      <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.#ctor" project="ClockWork.ScriptBuilder" file="2754cc89-4011-a14e-b704-ec12747cf089" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider" project="ClockWork.ScriptBuilder" file="907553f5-e722-a0ae-092e-950efae6fd07">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.Format(System.String,System.Object,System.IFormatProvider)" project="ClockWork.ScriptBuilder" file="4ab9b8c6-5a11-ac95-791b-07717eb01875" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider" project="ClockWork.ScriptBuilder" file="4506c4b5-d6f2-c444-ed3b-b8d55fdc7967">
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.DateTimeMode" project="ClockWork.ScriptBuilder" file="5d84fb38-1203-523e-71da-3c812de2689f" />
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.Instance" project="ClockWork.ScriptBuilder" file="2824d737-56a2-87f8-138a-d8be9bbb068e" />
+      </topic>
+    </topic>
+    <topic id="T:ClockWork.ScriptBuilder.XmlScript.XsText" project="ClockWork.ScriptBuilder" file="66b0f036-1a97-c816-4f13-ff6d94eeac99">
+      <topic id="AllMembers.T:ClockWork.ScriptBuilder.XmlScript.XsText" project="ClockWork.ScriptBuilder" file="e57e7f4e-488f-7486-b6df-69f148e2f066" />
+      <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsText.#ctor(System.Object)" project="ClockWork.ScriptBuilder" file="63e42f28-04f3-6ebb-8434-45c926c27f2f" />
+      <topic id="Methods.T:ClockWork.ScriptBuilder.XmlScript.XsText" project="ClockWork.ScriptBuilder" file="359998fc-fa99-e5a7-c842-66a9981eb1c4">
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsText.Encode(System.String)" project="ClockWork.ScriptBuilder" file="b9f468da-6a3f-b941-7be2-1206e59885b3" />
+        <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsText.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)" project="ClockWork.ScriptBuilder" file="95138ea5-be3b-38b9-66cb-254bd5dc97e1" />
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsText.Render" project="ClockWork.ScriptBuilder" file="cba446e1-8add-1c74-cfe6-34cd0dfd8bd8">
+          <topic id="M:ClockWork.ScriptBuilder.XmlScript.XsText.Render(System.Xml.XmlElement)" project="ClockWork.ScriptBuilder" file="83836e93-1f0d-9dae-9493-f2e98087785e" />
+        </topic>
+        <topic id="Overload:ClockWork.ScriptBuilder.XmlScript.XsText.TrySetLayout" project="ClockWork.ScriptBuilder" file="836106cc-50f9-5280-b98b-57afb63e0eab" />
+      </topic>
+      <topic id="Properties.T:ClockWork.ScriptBuilder.XmlScript.XsText" project="ClockWork.ScriptBuilder" file="aa5df148-56b0-430b-d945-39199f8179e8">
+        <topic id="P:ClockWork.ScriptBuilder.XmlScript.XsText.Text" project="ClockWork.ScriptBuilder" file="cad5b98e-be8b-df66-894d-b6ec8de18239" />
+      </topic>
+      <topic id="Events.T:ClockWork.ScriptBuilder.XmlScript.XsText" project="ClockWork.ScriptBuilder" file="a2b2e4ff-811e-987b-9319-b9447c5b6b43" />
+    </topic>
+  </topic>
+</topics>

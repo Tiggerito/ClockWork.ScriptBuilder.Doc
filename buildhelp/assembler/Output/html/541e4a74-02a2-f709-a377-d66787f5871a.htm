@@ -1,0 +1,161 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Render Method </title>
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="ClockWork.ScriptBuilder.JavaScript.ExtJs" />
+    <meta name="file" content="541e4a74-02a2-f709-a377-d66787f5871a" />
+    <meta name="guid" content="541e4a74-02a2-f709-a377-d66787f5871a" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Render" />
+      <MSHelp:TOCTitle Title="Render Method " />
+      <MSHelp:RLTitle Title="ExtJsApplyIf.Render Method  (ClockWork.ScriptBuilder.JavaScript.ExtJs)" />
+      <MSHelp:Keyword Index="A" Term="Overload:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Render" />
+      <MSHelp:Keyword Index="A" Term="frlrfClockWorkScriptBuilderJavaScriptExtJsExtJsApplyIfClassRenderTopic" />
+      <MSHelp:Keyword Index="K" Term="Render method" />
+      <MSHelp:Keyword Index="K" Term="ExtJsApplyIf.Render method" />
+      <MSHelp:Keyword Index="F" Term="Render" />
+      <MSHelp:Keyword Index="F" Term="ExtJsApplyIf.Render" />
+      <MSHelp:Keyword Index="F" Term="ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Render" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="C++" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="AssemblyVersion" Value="1.0.1.0" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label><label id="devlangsMenuJavaScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JavaScript </nobr></label></span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0">
+              <img id="memberOptionsDropdownImage" src="../icons/dropdown.gif" /> <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All </nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+        <input id="JavaScriptCheckbox" type="checkbox" data="JavaScript,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="JavaScriptCheckbox">JavaScript</label>
+        <br />
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">.NET Framework Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">ExtJsApplyIf<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>Render Method </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+            <a href="a08f2bb0-df78-5022-687f-ab1b73260e36.htm">ExtJsApplyIf Class</a>  <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>  
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <font color="DarkGray"></font>
+        <p /> <h1 class="heading"><span onclick="ExpandCollapse(overloadMembersTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(overloadMembersTableToggle, event)" tabindex="0"><img id="overloadMembersTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Overload List</span></h1><div id="overloadMembersTableSection" class="section" name="collapseableSection" style=""><table id="memberList" class="members" frame="lhs" cellpadding="2"><col width="10%" /><tr><th class="iconColumn">
+               
+            </th><th class="nameColumn">Name</th><th class="descriptionColumn">Description</th></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="88197c10-eb3a-b6b9-a411-f66f2cb22d86.htm">Render<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span></span></a></td><td><div class="summary">
+            Render straight to string using the default script writer 
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="500b52d3-ce2f-ffb1-de0d-d818627d402a.htm">Render(IScriptWriter)</a></td><td><div class="summary">
+            Render the content to a script writer
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="3af20b18-85e2-cf4e-1e1e-90cc9804f8f0.htm">Render(IFormatProvider)</a></td><td><div class="summary">
+            Rnder straight to a string using the specified format provider
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="e78049cd-0e55-5c85-1393-bd9fce23d932.htm">Render(Stream)</a></td><td><div class="summary">
+            Render to a stream
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="20a0f059-c205-e1f3-d67c-1edb53590239.htm">Render(StreamWriter)</a></td><td><div class="summary">
+            Render to a stream writer
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="473fff3b-87cc-9d57-7d54-fe2b696b4805.htm">Render(TextWriter)</a></td><td><div class="summary">
+            Render to a text writer
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="c620eb6e-a1d0-4f1b-134a-a2fd7e26c005.htm">Render(StringBuilder)</a></td><td><div class="summary">
+            Render to a string builder
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="0e3d6eb2-1b25-0954-e04d-a8c35dec0579.htm">Render(IScriptWriter, Int32)</a></td><td><div class="summary">
+            Render the content to a script writer indenting the content as specified
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="068904e5-0bb9-e0af-2297-bbe80cc46cbf.htm">Render(Stream, IFormatProvider)</a></td><td><div class="summary">
+            Render to a stream using the specified format provider
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="ef97b973-200f-b01b-0333-8cb1557639f4.htm">Render(StreamWriter, IFormatProvider)</a></td><td><div class="summary">
+            Render to a stream writer using the specified format provider
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="373fdcc2-af3b-0e8c-c8ac-c5572353c2a0.htm">Render(TextWriter, IFormatProvider)</a></td><td><div class="summary">
+            Render to a text writer using the specified format provider
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" title="Public method" /></td><td><a href="46eaeb43-8bc9-ad20-2b66-f6de77a1ad41.htm">Render(StringBuilder, IFormatProvider)</a></td><td><div class="summary">
+            Render to a string builder using the specified format provider
+            </div> (Inherited from <a href="4722d29c-9912-b162-3e61-7be931d64b7f.htm">ScriptItem</a>.)</td></tr></table></div><h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span></h1><div id="seeAlsoSection" class="section" name="collapseableSection" style=""><div class="seeAlsoStyle"><a href="a08f2bb0-df78-5022-687f-ab1b73260e36.htm">ExtJsApplyIf Class</a></div><div class="seeAlsoStyle"><a href="df4ab54d-09c6-b7f9-52f2-a50b2cf95bb3.htm">ExtJsApplyIf Members</a></div><div class="seeAlsoStyle"><a href="b61a544a-f6a1-7679-f8dc-94e98d7e3901.htm">ClockWork.ScriptBuilder.JavaScript.ExtJs Namespace</a></div></div></div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+        </div>
+<span id="feedbackarea">
+			Send
+		<a href="javascript:SubmitFeedback('mccreath@bigfoot.com','ClockWork Script Builder','','','','%0\dThank%20you%20for%20your%20feedback.','Customer%20Feedback');">
+			
+      feedback
+		</a>
+			on this topic to Tony.
+		</span>
+</div>
+    </div>
+  </body>
+</html>

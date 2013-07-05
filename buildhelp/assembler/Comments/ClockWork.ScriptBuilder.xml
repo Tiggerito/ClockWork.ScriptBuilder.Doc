@@ -1,0 +1,3751 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClockWork.ScriptBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.XsText">
+            <summary>
+            Represents an xml text node
+            Ensures the content is correctly encoded when rendered
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptItem">
+            <summary>
+            Base class for objects in a script that can be structured and know how to render themselves to a ScriptWriter
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.IScriptItem">
+            <summary>
+            Defines an item that knows how to render itself
+            Also supports defining a layout style and providing 
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptItem.Render(System.IFormatProvider)">
+            <summary>
+            provide a string representation of the item using a default writer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Write the string rendering of an item to a ScriptWriter
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter,System.Int32)">
+            <summary>
+            Write the string rendering of an item to a ScriptWriter with the specidifed indentation
+            </summary>
+            <param name="writer"></param>
+            <param name="indents"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Indicate a layout. Should set the layout if it has not already been decided
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptItem.HasRenderContent">
+            <summary>
+            Return true if the item will render to a string that is not empty
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptItem.Layout">
+            <summary>
+            The way this item should be rendered
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.IScriptIfCondition">
+            <summary>
+            Lest a class specify how it behaves when used in a ScriptIf item
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptIfCondition.ScriptIfResult">
+            <summary>
+            if used in a ScriptIf test, should the true or false object be rendered
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.#ctor">
+            <summary>
+            Creates an empty script
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty script with a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.OnInitialise">
+            <summary>
+            A good place to set default values for an item
+            Called by the constructor
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout,System.Boolean)">
+            <summary>
+            Attempt to set the layout.
+            General policy is to only set the layout if it has not been set yet.
+            The presedence of layout control is:
+            	Constructor Based Layout if supplied directly by user (e.g. specifically created in script structure with layout)
+            	Constructor Based Layout if supplied by parent item (e.g. created by parent item with a layout)
+            	Set by Parent after contruction (e.g. parent has a preferred layout)
+            	The items Default layout
+            
+            Initially the layout is set to Auto which indicates
+            
+            Default: use this if you want to 
+            </summary>
+            <param name="layout">the layout preferred</param>
+            <param name="onlyIfNotAlreadyEstablished">Use false if you wish to override natural presidence and for a layout change</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.TrySetLayout(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Updates the layout if it has not already been set
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.ObjectTrySetLayout(System.Object,ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Helper to try and set a layout for an item
+            First checks if the sent object is an IScriptItem
+            </summary>
+            <param name="item">object to check</param>
+            <param name="layout">preferred layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)">
+            <summary>
+            Triggered when the items layout is changed
+            subclasses may alter internal layouts when this is striggered
+            </summary>
+            <param name="e">includes the new layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render">
+            <summary>
+            Render straight to string using the default script writer 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IFormatProvider)">
+            <summary>
+            Rnder straight to a string using the specified format provider
+            </summary>
+            <param name="formatProvider">used when rendering</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.Stream)">
+            <summary>
+            Render to a stream
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.Stream,System.IFormatProvider)">
+            <summary>
+            Render to a stream using the specified format provider
+            </summary>
+            <param name="stream"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.Text.StringBuilder)">
+            <summary>
+            Render to a string builder
+            </summary>
+            <param name="stringBuilder"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.Text.StringBuilder,System.IFormatProvider)">
+            <summary>
+            Render to a string builder using the specified format provider
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.StreamWriter)">
+            <summary>
+            Render to a stream writer
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.StreamWriter,System.IFormatProvider)">
+            <summary>
+            Render to a stream writer using the specified format provider
+            </summary>
+            <param name="writer"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.TextWriter)">
+            <summary>
+            Render to a text writer
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(System.IO.TextWriter,System.IFormatProvider)">
+            <summary>
+            Render to a text writer using the specified format provider
+            </summary>
+            <param name="writer"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Render the content to a script writer
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.Render(ClockWork.ScriptBuilder.IScriptWriter,System.Int32)">
+            <summary>
+            Render the content to a script writer indenting the content as specified
+            </summary>
+            <param name="writer">the script writer to render to</param>
+            <param name="indents">how many indents to add. These indents are added to the item own Indent level</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            This is called when the content is to be rendered
+            Subclasses will do what has to be done!
+            </summary>
+            <param name="e">includes the script writer to render content to</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptItem.ObjectHasRenderContent(System.Object)">
+            <summary>
+            Helper to test if an object will render as more than an empty string
+            </summary>
+            <param name="item">object to check</param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.DefaultLayout">
+            <summary>
+            Defines the default layout that this item with use
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.Layout">
+            <summary>
+            How an item is going to be layed out.
+            Inline = render without newlines
+            InlineBlock = start on same line but each following internal item should be on a new line
+            Block = start on a new line, all internal items should be on a new line 
+            
+            Note: internal items may cause the content to render over several lines even though this item is Inline
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.IsLayoutEstablished">
+            <summary>
+            Has a layout been requested
+            This could be via the constructor or using the TrySetLayout method
+            </summary>
+        </member>
+        <member name="E:ClockWork.ScriptBuilder.ScriptItem.LayoutChanged">
+            <summary>
+            Triggered when the itmes layout is changed
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.Indents">
+            <summary>
+            How much this item should be indented by
+            </summary>
+        </member>
+        <member name="E:ClockWork.ScriptBuilder.ScriptItem.Rendering">
+            <summary>
+            Triggered when the content is to being rendered
+            You can use this with a baisc ScriptItem to create a rendeing proxy 
+            i.e. place a script item where you want to render and listen to this event. 
+            when triggered render to the writer in the arguments
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.HasRenderContent">
+            <summary>
+            Will this item rendered to more than en empty string
+            Subclasses should override this if nned be
+            Used as the default result for ScriptIf testing
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptItem.ScriptIfResult">
+            <summary>
+            For example a list with no values may return false
+            Used in Sb.If testing
+            A good use is to indicate if an item needs to be included
+            default behavior is to return HasRenderContent
+            can be overriden by subclasses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsText.#ctor(System.Object)">
+            <summary>
+            Create a text node containing the text
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsText.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders the text content after encoding it
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsText.Encode(System.String)">
+            <summary>
+            Encodes a string of use in xml
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsText.Render(System.Xml.XmlElement)">
+            <summary>
+            Adds a text node to the parent element which contains the supplied text
+            </summary>
+            <param name="parentElement"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsText.Text">
+            <summary>
+            Content of the text node
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptLine">
+            <summary>
+            A collection of objects which will each be rendered on a single line
+            They will be concatinated together
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptSet">
+            <summary>
+            A ScriptItem that consists of a set/list/collection of things
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="items">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="items">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="items">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="items">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.GetRenderList">
+            <summary>
+            Gets the items to be included in the sets rendering
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)">
+            <summary>
+            By default, adds all items from this collection so they get renderred
+            Also supports the conversion of object[] to the actual items.
+            </summary>
+            <param name="dest"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.WriteSeperator(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Used to write the string that seperates each item
+            By default, renders the Seperator property
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            renders each item in the set, seperated by the Seperator
+            </summary>
+            <param name="e">includes the script writer to render content to</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.InsertRange(System.Object[])">
+            <summary>
+            Lets you insert multiple items
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.AddRange(System.Object[])">
+            <summary>
+            Lets you add multiple items
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.RegisterItem(System.String,System.Object)">
+            <summary>
+            Only add it if its not already been registered
+            
+            </summary>
+            <param name="name"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item
+            </summary>
+            <param name="item">The object to locate</param>
+            <returns>The index of item if found in the list; otherwise, -1. </returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item at the specified index
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.RemoveAt(System.Int32)">
+            <summary>
+            Removes the first occurrence of a specific object 
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.Clear">
+            <summary>
+            Removes all items 
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.Contains(System.Object)">
+            <summary>
+            Determines whether the set contains a specific item.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.CopyTo(System.Object[],System.Int32)">
+            <summary>
+            Copies the elements of the set to an Array, starting at a particular Array index.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.Add(System.Object)">
+            <summary>
+            Adds an item to the end of the set
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSet.ToString">
+            <summary>
+            Add collection size
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.Items">
+            <summary>
+            The collection of objects in the set
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.Seperator">
+            <summary>
+            The string to render between each item
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.HasRenderContent">
+            <summary>
+            true if contains no items (IfTest) and has no wrapper
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.ScriptIfResult">
+            <summary>
+            Fail test if empty or all contained ScriptItems fail the iftest
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.HasRenderContentInSet">
+            <summary>
+            True if any of the items in the set contain any render content
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.Count">
+            <summary>
+            how many items are in the set
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSet.IsReadOnly">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptLine.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsNew">
+            <summary>
+            Renders new syntax:
+            new className(arg, arg, arg)
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])">
+            <summary>
+            Create a new function call:
+            new className(args)
+            </summary>
+            <param name="layout"></param>
+            <param name="className"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            Create a new function call:
+            new className(args)
+            </summary>
+            <param name="layout"></param>
+            <param name="className"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(ClockWork.ScriptBuilder.JavaScript.JsCall)">
+            <summary>
+            Create a new function call based on an existing function call
+            new call
+            </summary>
+            <param name="call"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(System.Object,System.Object[])">
+            <summary>
+            Create a new function call:
+            new className(args)
+            </summary>
+            <param name="className"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            Create a new function call:
+            new className(args)
+            </summary>
+            <param name="className"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsNew.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders new syntax:
+            new className(arg, arg, arg)
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsNew.Call">
+            <summary>
+            the function call to create the new object
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider">
+            <summary>
+            Formats types to conform with javascript on top of the normal ScriptFormatProvider features
+            Use the singleton Instance to save resources
+            
+            Bool = true|false
+            DateTime = yyyy/MM/dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptFormatProvider">
+            <summary>
+            Supports formatting IScriptItems via their Render method and SecureString reading
+            Use the singleton Instance to save resources
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptFormatProvider.Format(System.String,System.Object,System.IFormatProvider)">
+            <summary>
+            If passed a IScriptItem it will use its Render, otherwise formats as normal
+            Also supports SecureString reading
+            </summary>
+            <param name="format"></param>
+            <param name="arg"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptFormatProvider.System#IFormatProvider#GetFormat(System.Type)">
+            <summary>
+            Indicate this is a Custom Formatter
+            </summary>
+            <param name="formatType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptFormatProvider.Instance">
+            <summary>
+            A reusable instance of the format provider
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider.Format(System.String,System.Object,System.IFormatProvider)">
+            <summary>
+            Formats booleans and dates in a javascript compliant way
+            
+            Bool = true|false
+            DateTime = yyyy/MM/dd HH:mm:ss
+            </summary>
+            <param name="format"></param>
+            <param name="arg"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsFormatProvider.Instance">
+            <summary>
+            A reusable instance of the format provider
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsIf">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            if (condition) { trueItem }
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(System.Object,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            </summary>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <param name="falseItem"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            </summary>
+            <param name="layout"></param>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <param name="falseItem"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem }
+            </summary>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem }
+            </summary>
+            <param name="layout"></param>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.Initialise(System.Object,System.Object,System.Object)">
+            <summary>
+            Shared routine for the constructors
+            ensures the items are blocks or placed in blocks
+            </summary>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <param name="falseItem"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Render the if clause
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsIf.Condition">
+            <summary>
+            should render as a boolean expression for the if clause
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsIf.TrueBlock">
+            <summary>
+            contains the script for the success/true clause
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsIf.FalseBlock">
+            <summary>
+            contains the script for the fail/false clause
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(receiver, config);
+            Ext.applyIf(receiver, config, defaults);
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(this, config);
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(receiver, config);
+            </summary>
+            <param name="config"></param>
+            <param name="reciever"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(this, config, defaults);
+            </summary>
+            <param name="config"></param>
+            <param name="defaults"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(receiver, config, defaults);
+            </summary>
+            <param name="config"></param>
+            <param name="reciever"></param>
+            <param name="defaults"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the applyIf statement
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Receiver">
+            <summary>
+            The object to have the config applied to
+            defaults to this
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Config">
+            <summary>
+            A configuration object that contains the property values to apply to the reciever
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.Defaults">
+            <summary>
+            An optional defaults object
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApplyIf.HasRenderContent">
+            <summary>
+            If either config or defaults have render content
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsObject">
+            <summary>
+            Renders object syntax:
+            {property, property, property}
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptSetWrapper">
+            <summary>
+            A wrapper designed to wrap a ScriptSet
+            Provides direct access to the ScriptSet
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptWrapper">
+            <summary>
+            An item that lets you wrap objects before and/or after another item
+            Useful to create effects like surrounding brackets
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor">
+            <summary>
+            Create an empty wrapper
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty wrapper with a custom layout
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)">
+            <summary>
+            Create a wrapper with a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="before">object to render before the item</param>
+            <param name="content">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.#ctor(System.Object,System.Object,System.Object)">
+            <summary>
+            Create a wrapper
+            </summary>
+            <param name="before">object to render before the item</param>
+            <param name="content">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.SetWrapper(System.Object,System.Object)">
+            <summary>
+            Quck wat to set both Before and After objects
+            </summary>
+            <param name="before">object to render before the content</param>
+            <param name="after">object to render after the content</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)">
+            <summary>
+            Updates the content layout based on the wrappers layout
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWrapper.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders the before, content and after objects
+            content is indented by the InternalIndents value (default 1)
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.Before">
+            <summary>
+            Object to render Before the Content
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.Content">
+            <summary>
+            object to render as the Content
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.After">
+            <summary>
+            Object to render After the Content
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.ContentLayout">
+            <summary>
+            The layout to apply to the content if not already stated
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.InternalIndents">
+            <summary>
+            The indentation level for the Content. Does not apply to the Begin and End parts
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.HasRenderContent">
+            <summary>
+            True if Before, Content or After objects have content
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWrapper.ScriptIfResult">
+            <summary>
+            Asks the Content object for the result
+            Before and After are not considdered
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor">
+            <summary>
+            Create an empty wrapper
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty wrapper with a custom layout
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.ScriptSet,System.Object)">
+            <summary>
+            Create a wrapper with a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="before">object to render before the item</param>
+            <param name="set">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(System.Object,ClockWork.ScriptBuilder.ScriptSet,System.Object)">
+            <summary>
+            Create a wrapper
+            </summary>
+            <param name="before">object to render before the item</param>
+            <param name="set">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)">
+            <summary>
+            Create a wrapper round a Script using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="before">object to render before the item</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.#ctor(System.Object,System.Object)">
+            <summary>
+            Create a wrapper round a Script
+            </summary>
+            <param name="before">object to render before the item</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.InsertRange(System.Object[])">
+            <summary>
+            Insert an array of items into the set
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.AddRange(System.Object[])">
+            <summary>
+            Add an array of items to the end of the set
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item
+            </summary>
+            <param name="item">The object to locate</param>
+            <returns>The index of item if found in the list; otherwise, -1. </returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item at the specified index
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.RemoveAt(System.Int32)">
+            <summary>
+            Removes the first occurrence of a specific object 
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Add(System.Object)">
+            <summary>
+            Adds an item to the end of the set
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Clear">
+            <summary>
+            Removes all items 
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Contains(System.Object)">
+            <summary>
+            Determines whether the set contains a specific item.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.CopyTo(System.Object[],System.Int32)">
+            <summary>
+            Copies the elements of the set to an Array, starting at a particular Array index.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptSetWrapper.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Set">
+            <summary>
+            The ScriptSet used as the content for this wrapper
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSetWrapper.Count">
+            <summary>
+            how many items are in the set
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptSetWrapper.IsReadOnly">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor">
+            <summary>
+            create an empty object
+            {}
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="properties"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(System.Object[])">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.JavaScript.JsPropertyList)">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsPropertyList)">
+            <summary>
+            create an object with properties
+            {name: value, name: value, name: value}
+            </summary>
+            <param name="layout"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsObject.OnInitialise">
+            <summary>
+            Wraps the items in curlies
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsObject.Properties">
+            <summary>
+            the properties in the object
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsArray">
+            <summary>
+            Renders array syntax:
+            [item, item, item]
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty array using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an array from a collection of objects
+            </summary>
+            <param name="items">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an array using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="items">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(System.Object[])">
+            <summary>
+            Create an array from parameters, each representing a object in the item
+            </summary>
+            <param name="items">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an array using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="items">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArray.OnInitialise">
+            <summary>
+            Wrap the list in square brackets
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsArray.List">
+            <summary>
+            The list of items in the array
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.RenderingEventArgs">
+            <summary>
+            Contains the writer so event handlers can write durring rendering
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.RenderingEventArgs.#ctor(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            passed the writer used for rendering
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.RenderingEventArgs.Writer">
+            <summary>
+            The writer
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.LayoutChangedEventArgs">
+            <summary>
+            Contains the new layout
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.LayoutChangedEventArgs.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Pass the new layout
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.LayoutChangedEventArgs.Layout">
+            <summary>
+            New layout
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(receiver, config);
+            Ext.apply(receiver, config, defaults);
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(this, config);
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(receiver, config);
+            </summary>
+            <param name="config"></param>
+            <param name="reciever"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(this, config, defaults);
+            </summary>
+            <param name="config"></param>
+            <param name="defaults"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(receiver, config, defaults);
+            </summary>
+            <param name="config"></param>
+            <param name="defaults"></param>
+            <param name="reciever"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the apply statement
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Receiver">
+            <summary>
+            The object to have the config applied to
+            defaults to this
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Config">
+            <summary>
+            A configuration object that contains the property values to apply to the reciever
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.Defaults">
+            <summary>
+            An optional defaults object
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsApply.HasRenderContent">
+            <summary>
+            If either config or defaults have render content
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.Xs">
+            <summary>
+            Provides a quick way to create XML Items
+            This makes building xml more readable
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Element(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])">
+            <summary>
+            Create an XML Element
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="name">name of the element</param>
+            <param name="properties">itmes within the element</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Element(System.String,System.Object[])">
+            <summary>
+            Create an XML Element
+            </summary>
+            <param name="name">name of the element</param>
+            <param name="properties">itmes within the element</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Attribute(System.String,System.Object)">
+            <summary>
+            Create an XML Attribute
+            </summary>
+            <param name="name">name of the attribute</param>
+            <param name="value">value for the attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.CData(System.Object)">
+            <summary>
+            Wrap the data in a CData section
+            </summary>
+            <param name="data">object to be rendered inside a CDATA</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Text(System.Object)">
+            <summary>
+            Render content as text
+            raw text is automatically turned into one of these so that encoding is handled
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Render(System.Object)">
+            <summary>
+            Provide a string representation of the object
+            using an xml format provider
+            </summary>
+            <param name="o">object to render</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.Xs.Render(System.Object,System.Int32)">
+            <summary>
+            Provide a string representation of the object
+            using an xml format provider
+            </summary>
+            <param name="o">object to render</param>
+            <param name="indentations">starting indentation level</param>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.XsAttribute">
+            <summary>
+            Renders as an xml attribute
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer">
+            <summary>
+            Implemented by items that can be directly rendeded to an XmlElement
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.IXmlRenderer.Render(System.Xml.XmlElement)">
+            <summary>
+            Render content to an XmlElement
+            </summary>
+            <param name="element">element to place content in</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.#ctor(System.String,System.Object)">
+            <summary>
+            Create an xml attribute 
+            </summary>
+            <param name="name">name of the attribute</param>
+            <param name="value">value of the attribute</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders as an attribute 
+            name="value"
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Encode(System.String)">
+            <summary>
+            Encodes value for an xml attribute
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Render(System.Xml.XmlElement)">
+            <summary>
+            Adds the attribute to the supplied element
+            </summary>
+            <param name="parentElement"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Name">
+            <summary>
+            Name of the attribute
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsAttribute.Value">
+            <summary>
+            Value to put in the attribute
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.XsCData">
+            <summary>
+            Wrap the data in a CData section
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsCData.#ctor(System.Object)">
+            <summary>
+            A CData section with the supplied data as content
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsCData.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders the cdata section
+            Special handing is done to cope if the data contains the illegal closing cdata character sequence (which I can't use here!)
+            </summary>
+            <param name="e">includes the script writer to render content to</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsCData.Render(System.Xml.XmlElement)">
+            <summary>
+            Add a CData section to the supplied element
+            Special handing is done to cope if the data contains the illegal closing cdata character sequence
+            </summary>
+            <param name="parentElement"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsCData.Data">
+            <summary>
+            The content of the cdata section
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.Script">
+            <summary>
+            A collection of objects which will each be rendered on a new line
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Script.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.Script.DefaultLayout">
+            <summary>
+            Layout so that each item is on a new line
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptIndent">
+            <summary>
+            A Script that automatically indents its content
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIndent.OnInitialise">
+            <summary>
+            Initialise so this it indents
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsPropertyList">
+            <summary>
+            A collection designed to contains the JsProperty's of a JsObject
+            Can contain JsObjects or arrays of items 
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsList">
+            <summary>
+            Renders a set so that each item is seperated by a comma
+            item, item, item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsList.OnInitialise">
+            <summary>
+            Set the seperator to a comma
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor">
+            <summary>
+            Create an empty item
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty item using a custom layout
+            </summary>
+            <param name="layout">override the default layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a script from a collection of objects
+            </summary>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create an item using a custom layout from a collection of objects
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(System.Object[])">
+            <summary>
+            Create an item from parameters, each representing a object in the item
+            </summary>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an item using a custom layout from parameters
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">set of paramters</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.FindProperty(System.String)">
+            <summary>
+            Find the first property of that name in the list
+            Will recurse through inner JsObjects directly placed in the list
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.FindProperty(System.Object,System.String)">
+            <summary>
+            Recursive search for a property
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.FindPropertyValue(System.String)">
+            <summary>
+            Return the value of a property
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.Add(System.String,System.Object)">
+            <summary>
+            Add a property by its name and value
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsPropertyList.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)">
+            <summary>
+            flatten out object in objects so they become one
+            so we can combine objects/properties into resulting object 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsArguments">
+            <summary>
+            argument syntax:
+            (arg, arg, arg)
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor">
+            <summary>
+            Create an empty set of arguments
+            ()
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(System.Object[])">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create a set of arguments
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsArguments.OnInitialise">
+            <summary>
+            wrap the arguments in brackets
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsArguments.List">
+            <summary>
+            The underlying list of arguments
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs">
+            <summary>
+            Provides a quick way to create ExtJs Items
+            This makes script building code more readable
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Apply(ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(this, config);
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Apply(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.apply statement:
+            Ext.apply(receiver, config);
+            </summary>
+            <param name="reciever"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ApplyIf(ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(this, config);
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ApplyIf(System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            render the Ext.applyIf statement:
+            Ext.applyIf(receiver, config);
+            </summary>
+            <param name="reciever"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Component(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            Renders a component structure
+            place component properties and functions in the componentObject
+            </summary>
+            <param name="componentName">name to give the component</param>
+            <param name="baseComponent">base component to extend</param>
+            <param name="componentObject">the object that defines the component</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.Class(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Script Item designed to help construct the class pattern often used in ExtJs
+            aka pre-configured classes
+            </summary>
+            <param name="className">name to give the class</param>
+            <param name="baseClass">base class to extend</param>
+            <param name="parameters">constructor parameters</param>
+            <param name="constructor">constructor script</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.GetNamespace(System.String)">
+            <summary>
+            Works out the namespace part of the class name
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.BaseCall(System.Object,System.Object,System.Object[])">
+            <summary>
+            Provides a Script item to do a call to a base classes functions
+            Should be used when overriding base functions
+            see BaseApply as an alternative
+            </summary>
+            <param name="className">name of the calling class</param>
+            <param name="function">function to call in the base class (should normally be same name as current function)</param>
+            <param name="parameters">parameters to pass to the base function</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.BaseApply(System.Object,System.String)">
+            <summary>
+            Provides a Script item to do a call to a base classes functions
+            Should be used when overriding base functions
+            The preferred way to call base functions as it does not depend on paremters
+            see BaseCall as an alternative
+            </summary>
+            <param name="className">name of the calling class</param>
+            <param name="function">function to call in base class (should normally be same name as current function)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJs.ExtJsType(System.Type)">
+            <summary>
+            Convert .Net types to Javascript types
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsBlock">
+            <summary>
+            Renders block syntax:
+            { 
+            	line 
+            	line 
+            	line 
+            }
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor">
+            <summary>
+            Create an empty block
+            {}
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a block
+            {
+            	line
+            	line
+            	line
+            }
+            </summary>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(System.Object[])">
+            <summary>
+            Create a block
+            {
+            	line
+            	line
+            	line
+            }
+            </summary>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.Script)">
+            <summary>
+            Create a block
+            {
+            	script
+            }
+            </summary>
+            <param name="script"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty block
+            {}
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a block
+            {
+            	line
+            	line
+            	line
+            }
+            </summary>
+            <param name="layout"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create a block
+            {
+            	line
+            	line
+            	line
+            }
+            </summary>
+            <param name="layout"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.Script)">
+            <summary>
+            Create a block
+            {
+            	script
+            }
+            </summary>
+            <param name="layout"></param>
+            <param name="script"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsBlock.OnInitialise">
+            <summary>
+            wraps the items on curly brackets
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsBlock.Script">
+            <summary>
+            The script placed within the block
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsBlock.DefaultLayout">
+            <summary>
+            Defines the default layout that this item with use
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory">
+            <summary>
+            Creates renderable variable names that compress to short names based on a sequence:
+            a,b,c,...,x,y,z,aa,ab,ac,...ax,ay,az,ba,bb,bc,......zzzzzzz...
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.Create(System.Object)">
+            <summary>
+            Create a renderable variable names that compress to the next short name based on a sequence:
+            a,b,c,...,x,y,z,aa,ab,ac,...ax,ay,az,ba,bb,bc,......zzzzzzz...
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.RecursiveLetterSetName(System.Int32)">
+            <summary>
+            Generates a name based on a sequence of letters like this
+            a,b,c,...,x,y,z,aa,ab,ac,...ax,ay,az,ba,bb,bc,......zzzzzzz...
+            
+            LetterSet defines the letters used in the sequence
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsVariableFactory.LetterSet">
+            <summary>
+            Letters to include in the RecursiveLetterSetName algorythm
+            defaults to
+            abcdefghijklmnopqrstuvwxyz
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsQuote">
+            <summary>
+            Wrap single or double quotes round some text.
+            single quotes by default.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Wrap single or double quotes round the text.
+            </summary>
+            <param name="text">text to be placed in the quotes</param>
+            <param name="doubleQuotes">true if it should use double quotes</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor(System.Object)">
+            <summary>
+            Wrap single quotes round the text.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.#ctor">
+            <summary>
+            Creates an empty set of single quotes.
+            add content using the Text property.
+            change to double quotes uing the DoubleQuote property.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsQuote.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Wraps the quotes around the rendering of the text object
+            escapes internal quotes and new lines
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsQuote.Text">
+            <summary>
+            Text to go inside the quotes.
+            it will be rendered to a string then quotes and new lines escaped
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsQuote.DoubleQuotes">
+            <summary>
+            Set to true if double quotes are required
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass">
+            <summary>
+            Script Item designed to help construct the class pattern often used in ExtJs
+            aka pre-configured classes
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.#ctor(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create a Class pattern
+            Established the namespace (Ext.ns)
+            Extends the base class (Ext.extend)
+            </summary>
+            <param name="className">the name (including namespace) for the new class</param>
+            <param name="baseClass">the class this inherits from</param>
+            <param name="parameters">The parameters for the constructor function</param>
+            <param name="constructor">the constructor code</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the class
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.ClassName">
+            <summary>
+            the name (including namespace) for the new class
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.BaseClass">
+            <summary>
+            the class this inherits from
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.Parameters">
+            <summary>
+            paramters for the constuctor
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsClass.Constructor">
+            <summary>
+            Constructor code
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.XsElement">
+            <summary>
+            Represents an xml element.
+            can contain any item. 
+            XsAttribute items will be rendered as attributes
+            xml specific items implement IXmlRenderer which lets you render directly to an XmlDocument or XmlElement
+            other objects are wrapped into a XsText item that encodes their rendered content as a text node
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String)">
+            <summary>
+            creates an empty element
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String)">
+            <summary>
+            creates an empty element
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            creates an element containing items
+            </summary>
+            <param name="name"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(System.String,System.Object[])">
+            <summary>
+            creates an element containing items
+            </summary>
+            <param name="name"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            creates an element containing items
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])">
+            <summary>
+            creates an element containing items
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Render the xml element
+            detects XsAttributes form within its collection and renders appropriately
+            non IXmlRenderer objects are wrapped within XsText rendering i.e. encoded 
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.AddToRenderList(System.Collections.Generic.List{System.Object},System.Object)">
+            <summary>
+            remove attributes from render list
+            </summary>
+            <param name="dest"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.Render(System.Xml.XmlDocument)">
+            <summary>
+            add as the root XmlElement
+            </summary>
+            <param name="doc"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.Render(System.Xml.XmlElement)">
+            <summary>
+            add as an XmlElement to the children of parentElement
+            </summary>
+            <param name="parentElement"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsElement.CreateXmlElement(System.Xml.XmlDocument)">
+            <summary>
+            Creates an XmlElement based on this
+            Adds all children
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsElement.Name">
+            <summary>
+            element name
+            can include namespace (I think!)
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsElement.DefaultLayout">
+            <summary>
+            Defines the default layout that this item with use
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.Sb">
+            <summary>
+            Provides a quick way to create Script Items
+            This makes script building code more readable
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Script(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            A collection of objects which will each be rendered on a new line
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">collection of objects to render</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Script(System.Object[])">
+            <summary>
+            A collection of objects which will each be rendered on a new line
+            </summary>
+            <param name="lines">collection of objects to render</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Line(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            A collection of objects which will each be rendered on a single line
+            They will be concatinated together
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="parts">the objects to be concatinated</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Line(System.Object[])">
+            <summary>
+            A collection of objects which will each be rendered on a single line
+            They will be concatinated together
+            </summary>
+            <param name="parts">the objects to be concatinated</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.ScriptIf(System.Object,System.Object,System.Object)">
+            <summary>
+            This  item lets you place if-then-else like logic within a script. The logic is only tested at render time.
+            When rendering this item will check if the test objects results in a true or false
+            It will then render the object related to that state
+            It the test object implements IScriptIfCondition the test result is based on its ScriptIfResult property
+            Otherwise the test object is converted to a boolean in the normal way
+            A null test object returns false.
+            </summary>
+            <param name="test">object to test to see which of the other objects to render</param>
+            <param name="trueValue">object to render if test returns true</param>
+            <param name="falseValue">object to render if test returns false</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.ScriptIf(System.Object,System.Object)">
+            <summary>
+            This  item lets you place if-then like logic within a script. The logic is only tested at render time.
+            When rendering this item will check if the test objects results in a true
+            It will then render the trueValue object, oherwise it renders nothing
+            It the test object implements IScriptIfCondition the test result is based on its ScriptIfResult property
+            Otherwise the test object is converted to a boolean in the normal way
+            A null test object result sin nothing being renderred.
+            </summary>
+            <param name="test">object to test. if it results in a true then render the trueValue object</param>
+            <param name="trueValue">object to render if the test returns true</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Indent(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            A Script that automatically indents its content
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="lines">the lines of the script</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Indent(System.Object[])">
+            <summary>
+            A Script that automatically indents its content
+            </summary>
+            <param name="lines">the lines of the script</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Wrapper(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.IScriptItem,System.Object)">
+            <summary>
+            An item that lets you wrap objects before and/or after another item
+            Useful to create effects like surrounding brackets
+            </summary>
+            <param name="layout">override the default layout</param>
+            <param name="before">object to render before the item</param>
+            <param name="item">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Wrapper(System.Object,ClockWork.ScriptBuilder.IScriptItem,System.Object)">
+            <summary>
+            An item that lets you wrap objects before and/or after another item
+            Useful to create effects like surrounding brackets
+            </summary>
+            <param name="before">object to render before the item</param>
+            <param name="item">the item to render</param>
+            <param name="after">object to render after the item</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.TrySetLayout(System.Object,ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Helper to try and set a layout for an item
+            First checks if the sent object is an IScriptItem
+            </summary>
+            <param name="item">object to check</param>
+            <param name="layout">preferred layout</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Compressible(System.Object,System.Object)">
+            <summary>
+            Lets you vary the text rendered based on the compressvalue in the writer
+            </summary>
+            <param name="full"></param>
+            <param name="compressed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.HasRenderContent(System.Object)">
+            <summary>
+            Helper to test if an object will render as more than an empty string
+            </summary>
+            <param name="item">object to check</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Render(System.Object)">
+            <summary>
+            Provide a string representation of the object
+            using ScriptItem rendering if available
+            </summary>
+            <param name="o">the object to render</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Sb.Render(System.Object,System.Int32)">
+            <summary>
+            Provide a string representation of the object
+            using ScriptItem rendering if available
+            </summary>
+            <param name="o">the object to render</param>
+            <param name="indentations">starting indentation level</param>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.IScriptWriter">
+            <summary>
+            A writer used by ScriptItems
+            Supports indentation and formatting
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.BeginIndent">
+            <summary>
+            Start a new level of indentation
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.EndIndent">
+            <summary>
+            reduce the level of indentation
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.BeginIndent(System.Int32)">
+            <summary>
+            increase the level of indentations
+            </summary>
+            <param name="levels">how many levels to increase by</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.EndIndent(System.Int32)">
+            <summary>
+            decrease the level of indentations
+            </summary>
+            <param name="levels">how many levels to decrease by</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.WriteNewLineAndIndent">
+            <summary>
+            The standard wat to move to the next line and pre indent so content is in the correct place
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.Write(System.Object)">
+            <summary>
+            Write the given object.
+            Content should be formatted using the format method
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.Format(System.Object)">
+            <summary>
+            Convert an object to string form writing
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.Flush">
+            <summary>
+            Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.IScriptWriter.Close">
+            <summary>
+            Closes the current writer and releases any system resources associated with the writer. 
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptWriter.CurrentIndentLevel">
+            <summary>
+            The current level of indents in use
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptWriter.FormatProvider">
+            <summary>
+            The format provider to use when formatting objects
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.IScriptWriter.Compress">
+            <summary>
+            writer requests that compressed content is provided when writing
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptIf">
+            <summary>
+            This  item lets you place if-then-else like logic within a script. The logic is only tested at render time.
+            When rendering this item will check if the test objects results in a true or false
+            It will then render the object related to that state
+            It the test object implements IScriptIfCondition the test result is based on its ScriptIfResult property
+            Otherwise the test object is converted to a boolean in the normal way
+            A null test object returns false.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIf.#ctor(System.Object,System.Object,System.Object)">
+            <summary>
+            If the test object is an IScriptIfCondition then it tests using its ScriptIfResult method
+            Otherwise we attempt to convert the object to a boolean using ConvertToBoolean()
+            </summary>
+            <param name="test">object to test against. must be convertable to a boolean or a IScriptIfCondition</param>
+            <param name="trueValue">The object to render if the test return true</param>
+            <param name="falseValue">The object to render if the test return false</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIf.#ctor(System.Object,System.Object)">
+            <summary>
+            This  item lets you place if-then like logic within a script. The logic is only tested at render time.
+            When rendering this item will check if the test objects results in a true
+            It will then render the trueValue object, oherwise it renders nothing
+            It the test object implements IScriptIfCondition the test result is based on its ScriptIfResult property
+            Otherwise the test object is converted to a boolean in the normal way
+            A null test object result sin nothing being renderred.
+            </summary>
+            <param name="test">object to test. if it results in a true then render the trueValue object</param>
+            <param name="trueValue">object to render if the test returns true</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIf.ObjectScriptIfResult(System.Object)">
+            <summary>
+            Helper to perform the test on any object
+            </summary>
+            <param name="item">object to test</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptIf.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Renders the winner of the test
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.Test">
+            <summary>
+            The object to apply the test on.
+            If its a ScriptItem the test is based on that items IfTest() method
+            Otherwise we attempt to convert the object to a boolean using ConvertToBoolean()
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.TrueValue">
+            <summary>
+            The object to render if the test return true
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.FalseValue">
+            <summary>
+            The object to render if the test return false
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.TestResult">
+            <summary>
+            Runs the test and returns the result
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.Winner">
+            <summary>
+            Returns the object to be used based on the test result
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.ScriptIfResult">
+            <summary>
+            A ScriptIf will return true if the winner has content
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptIf.HasRenderContent">
+            <summary>
+            Based on the state of the winner
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.Encryption">
+            <summary>
+            Provides utilities to help encrypt/decrypt data
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Encryption.ReadSecureString(System.Security.SecureString)">
+            <summary>
+            Utility to read a secure string which is encrypted in memory
+            For best security, only read a secure string when necesary, i.e. writing
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.Encryption.CreateSecureString(System.String)">
+            <summary>
+            Encryts a string in memory
+            For best security, convert a string to a secure string as soon as possible
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsProperty">
+            <summary>
+            A property of an object.
+            name: value
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.#ctor(System.Object,System.Object)">
+            <summary>
+            create an objects property
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)">
+            <summary>
+            create an objects property
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsProperty.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            Rneders as
+            name: value
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.Name">
+            <summary>
+            The property name
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.Value">
+            <summary>
+            the value the property will be set to.
+            If it is a string ensure you use Js.Q("text") to place it in quotes
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsProperty.HasRenderContent">
+            <summary>
+            True if it has a name
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsParameters">
+            <summary>
+            Renders parameter syntax:
+            (param, param, param)
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor">
+            <summary>
+            Create an empty parameter list
+            ()
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(System.Object[])">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="layout"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty parameter list
+            ()
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create a parameter list
+            (param, param, param)
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnInitialise">
+            <summary>
+            wrap the parameters in brackets
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)">
+            <summary>
+            base the layout of the parameter list on our layout
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsParameters.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the parameters
+            (param, param, param)
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsParameters.List">
+            <summary>
+            the underlying list of parameters
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsParameters.ListLayout">
+            <summary>
+            The layout to apply to the list if not already stated
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider">
+            <summary>
+            Adds formatting using the XmlConvert class
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.Format(System.String,System.Object,System.IFormatProvider)">
+            <summary>
+            Use XmlConvert where possible
+            </summary>
+            <param name="format"></param>
+            <param name="arg"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.Instance">
+            <summary>
+            A reusable instance of the format provider
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.XmlScript.XsFormatProvider.DateTimeMode">
+            <summary>
+            How DateTimes will get renderred
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptCompressible">
+            <summary>
+            Changes the object it renders based on the writers Compress value
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptCompressible.#ctor(System.Object,System.Object)">
+            <summary>
+            Changes the object it renders based on the writers Compress value
+            </summary>
+            <param name="full">The object to render if not set to Compress</param>
+            <param name="compressed">The object to render if set to Compress</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptCompressible.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render Compressed if Writer.Compress is true, otherwise render Full
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptCompressible.Full">
+            <summary>
+            The object to render if not set to Compress
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptCompressible.Compressed">
+            <summary>
+            The object to render if set to Compress
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsFunction">
+            <summary>
+            Renders function syntax:
+            function name(param, param) { script } 
+            function(param, param) { script }
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor">
+            <summary>
+            Create a function
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create a named function
+            function name(param, param) { script } 
+            </summary>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="script"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create a named function
+            function name() { script } 
+            </summary>
+            <param name="name"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Create a named function
+            function name(param, param) { lines } 
+            </summary>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.String,System.Object[])">
+            <summary>
+            Create a named function
+            function name() { lines } 
+            </summary>
+            <param name="name"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create an anonymous function
+            function(param, param) { script } 
+            </summary>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create an anonymous function
+            function() { script } 
+            </summary>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters)">
+            <summary>
+            Create an anonymous function
+            function(param, param) {  } 
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Create an anonymous function
+            function(param, param) { lines } 
+            </summary>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(System.Object[])">
+            <summary>
+            Create an anonymous function
+            function() { lines } 
+            </summary>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an anonymous function
+            function() {  } 
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create a named function
+            function name(param, param) { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="script"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create a named function
+            function name() { script } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Create a named function
+            function name(param, param) { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.String,System.Object[])">
+            <summary>
+            Create a named function
+            function name() { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create an anonymous function
+            function(param, param) { script }  
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Create an anonymous function
+            function() { script } 
+            </summary>
+            <param name="layout"></param>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters)">
+            <summary>
+            Create an anonymous function
+            function(param, param) {  } 
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Create an anonymous function
+            function(param, param) { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create an anonymous function
+            function() { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="lines"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.OnLayoutChanged(ClockWork.ScriptBuilder.LayoutChangedEventArgs)">
+            <summary>
+            Make the block layout default to the same as the functions layout
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsFunction.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the function
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Name">
+            <summary>
+            The name of the function
+            if empty it will be an anonymous function
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Parameters">
+            <summary>
+            The parameters the function accepts
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.Block">
+            <summary>
+            The code for the function
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsFunction.BlockLayout">
+            <summary>
+            The way the code section should be layed out
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptLayout">
+            <summary>
+            Defines ways a ScritpItem can be layed out
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.None">
+            <summary>
+             Don't specify any layout change. An actual layout can never be set to this
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.NotAlreadyEstablished">
+            <summary>
+            Layout has not yet been set. By default a TrySetLayout() call only works when in this state
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.Default">
+            <summary>
+            Let the item choose its own layout
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.Inline">
+            <summary>
+            Don't add newlines between items
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.InlineBlock">
+            <summary>
+            start on the same line and add newlines between items 
+            </summary>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptLayout.Block">
+            <summary>
+            start on a new line and add newlines between items
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsStatement">
+            <summary>
+            renders as a single line ended with a semi colon (;)
+            each items is concatinated together using a ScriptLine
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor">
+            <summary>
+            Create an empty statement
+            ;
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a statement
+            parts;
+            </summary>
+            <param name="parts"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(System.Object[])">
+            <summary>
+            Create a statement
+            parts;
+            </summary>
+            <param name="parts"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLine)">
+            <summary>
+            Create a statement
+            line;
+            </summary>
+            <param name="line"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout)">
+            <summary>
+            Create an empty statement
+            ;
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a statement
+            parts;
+            </summary>
+            <param name="layout"></param>
+            <param name="parts"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Create a statement
+            parts;
+            </summary>
+            <param name="layout"></param>
+            <param name="parts"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.#ctor(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.ScriptLine)">
+            <summary>
+            Create a statement
+            line;
+            </summary>
+            <param name="layout"></param>
+            <param name="line"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsStatement.OnInitialise">
+            <summary>
+            make it render ending in a semi colon (;)
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsStatement.Line">
+            <summary>
+            The contents of the wrapper is a ScriptLine
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.Js">
+            <summary>
+            Provides a quick way to create Js Items
+            This makes script building code more readable
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Q(System.Object)">
+            <summary>
+            Wrap single quotes round an item
+            Short hand for Quote()
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Quote(System.Object)">
+            <summary>
+            Wrap single quotes round an item
+            Short hand is Q()
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.QQ(System.Object)">
+            <summary>
+            Wrap double quotes round an item
+            Short hand for QuoteDouble()
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.QuoteDouble(System.Object)">
+            <summary>
+            Wrap double quotes round an item
+            Short hand is QQ()
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.New(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])">
+            <summary>
+            Renders new syntax:
+            new className(arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="className"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.New(System.Object,System.Object[])">
+            <summary>
+            Renders new syntax:
+            new className(arg, arg, arg)
+            </summary>
+            <param name="className"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Object(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders object syntax:
+            {property, property, property}
+            </summary>
+            <param name="layout"></param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Object(System.Object[])">
+            <summary>
+            Renders object syntax:
+            {property, property, property}
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Property(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)">
+            <summary>
+            Renders object property syntax:
+            name: value
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Property(System.Object,System.Object)">
+            <summary>
+            Renders object property syntax:
+            name: value
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders array syntax:
+            [item, item, item]
+            </summary>
+            <param name="layout"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(System.Object[])">
+            <summary>
+            Renders array syntax:
+            [item, item, item]
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders array syntax:
+            [item, item, item]
+            </summary>
+            <param name="layout"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Array(ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders array syntax:
+            [item, item, item]
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Block(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders block syntax:
+            { 
+            	line 
+            	line 
+            	line 
+            }
+            </summary>
+            <param name="layout"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Block(System.Object[])">
+            <summary>
+            Renders block syntax:
+            { 
+            	line 
+            	line 
+            	line 
+            }
+            </summary>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function name(param, param) { scriptBlock } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function name(param, param) { scriptBlock } 
+            </summary>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function name() { scriptBlock } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function name() { scriptBlock } 
+            </summary>
+            <param name="name"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function(param, param) { scriptBlock } 
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsParameters,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function(param, param) { scriptBlock } 
+            </summary>
+            <param name="parameters"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function() { scriptBlock } 
+            </summary>
+            <param name="layout"></param>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsBlock)">
+            <summary>
+            Renders function syntax:
+            function() { scriptBlock } 
+            </summary>
+            <param name="scriptBlock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function name(param, param) { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function name(param, param) { lines } 
+            </summary>
+            <param name="name"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function name() { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="name"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function name() { lines } 
+            </summary>
+            <param name="name"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function(param, param) { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.JavaScript.JsParameters,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function(param, param) { lines } 
+            </summary>
+            <param name="parameters"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders function syntax:
+            function() { lines } 
+            </summary>
+            <param name="layout"></param>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Function(System.Object[])">
+            <summary>
+            Renders function syntax:
+            function() { lines } 
+            </summary>
+            <param name="lines"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])">
+            <summary>
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </summary>
+            <param name="layout"></param>
+            <param name="functionName"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(System.Object,System.Object[])">
+            <summary>
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </summary>
+            <param name="functionName"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </summary>
+            <param name="layout"></param>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Call(System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </summary>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.List(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders list syntax:
+            item, item, item 
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.List(System.Object[])">
+            <summary>
+            Renders list syntax:
+            item, item, item 
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Statement(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders statement syntax (concat items and add a semicolon):
+            items; 
+            </summary>
+            <param name="layout"></param>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Statement(System.Object[])">
+            <summary>
+            Renders statement syntax (concat items and add a semicolon):
+            items;
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders parameter syntax:
+            (param, param, param)
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(System.Object[])">
+            <summary>
+            Renders parameter syntax:
+            (param, param, param)
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders parameter syntax:
+            (param, param, param)
+            </summary>
+            <param name="layout"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Parameters(ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders parameter syntax:
+            (param, param, param)
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.ScriptLayout,System.Object[])">
+            <summary>
+            Renders argument syntax:
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(System.Object[])">
+            <summary>
+            Renders argument syntax:
+            (arg, arg, arg)
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.ScriptLayout,ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders argument syntax:
+            (arg, arg, arg)
+            </summary>
+            <param name="layout"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Arguments(ClockWork.ScriptBuilder.JavaScript.JsList)">
+            <summary>
+            Renders argument syntax:
+            (arg, arg, arg)
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.If(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            </summary>
+            <param name="layout"></param>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <param name="falseItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.If(System.Object,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } else { falseItem }
+            </summary>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <param name="falseItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.If(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem }
+            </summary>
+            <param name="layout"></param>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.If(System.Object,System.Object)">
+            <summary>
+            Renders if syntax:
+            if (condition) { trueItem } 
+            </summary>
+            <param name="condition"></param>
+            <param name="trueItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Render(System.Object)">
+            <summary>
+            Provide a string representation of the object
+            using a javascript format provider
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.Js.Render(System.Object,System.Int32)">
+            <summary>
+            Provide a string representation of the object
+            using a javascript format provider
+            </summary>
+            <param name="o"></param>
+            <param name="indentations">number of indentations to start with</param>
+            <returns></returns>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.ScriptWriter">
+            <summary>
+            A writer that adds the following to the normal TextWriter
+            Indentation Control - tracks and adds indentation while writing
+            Accepts objects and formats then based on a format provider (default is ScriptFormatProvider)
+            Supports IScriptItem based classes and their self rendering ability
+            
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter)">
+            <summary>
+            Create a Script Writer that writes to a specific TextWriter
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream)">
+            <summary>
+            Create a Script Writer that writes to a Stream
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter,System.IFormatProvider)">
+            <summary>
+            Create a Script Writer that writes to a specific TextWriter using a particular format provider
+            </summary>
+            <param name="writer"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream,System.IFormatProvider)">
+            <summary>
+            Create a Script Writer that writes to a Stream using a particular format provider
+            </summary>
+            <param name="stream"></param>
+            <param name="formatProvider"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.TextWriter,ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Create a Script Writer that writes to a specific TextWriter based on another ScriptWriters settings
+            </summary>
+            <param name="writer"></param>
+            <param name="scriptWriter"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.#ctor(System.IO.Stream,ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Create a Script Writer that writes to a Stream using a particular format provider
+            </summary>
+            <param name="stream"></param>
+            <param name="scriptWriter"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.CopySettings(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            Copies settings from the provided writer so that this writer will write in the same way
+            </summary>
+            <param name="scriptWriter"></param>
+        </member>
+        <member name="F:ClockWork.ScriptBuilder.ScriptWriter.Writer">
+            <summary>
+            The underlying writer
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.Write(System.Object)">
+            <summary>
+            Write an object
+            If its a IScriptItem then use its Render method
+            First formats the object using the Format method
+            </summary>
+            <param name="o">object to write to the undelying TextWriter</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLineAndIndent(System.Boolean)">
+            <summary>
+            Start a new line and indent to the required position
+            Prefered way to move to the next line
+            </summary>
+            <param name="unlessAtStartOfLine">If true don't do anything if currently at the start of a line</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLineAndIndent">
+            <summary>
+            Start a new line and indent to the required position
+            Prefered way to move to the next line
+            Does nothing if currently at the start of a line
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.WriteNewLine">
+            <summary>
+            Starts a new line.
+            Should generaly be folled by a WriteIndent() so following text is in the correct position
+            WriteNewLineAndIndent() may be preferable.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.WriteIndent">
+            <summary>
+            Adds the indent string
+            Should always be after a newline to make sense 
+            WriteNewLineAndIndent() may be preferable.
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.Format(System.Object)">
+            <summary>
+            Formats the object using the current FormatProvider
+            </summary>
+            <param name="o">object to format</param>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.Format(System.String,System.Object)">
+            <summary>
+            Formats the object using the current FormatProvider
+            </summary>
+            <param name="format">format string to use</param>
+            <param name="o">object to format</param>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.BeginIndent">
+            <summary>
+            Increase the indentation level by one
+            BeginIndent() and EndIndent() should be used in pairs
+            Preferably using a try finally pattern so as to avoid messed up formatting on errors
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.BeginIndent(System.Int32)">
+            <summary>
+            Increase the indentation level by the supplied amount
+            BeginIndent() and EndIndent() should be used in pairs
+            Preferably using a try finally pattern so as to avoid messed up formatting on errors
+            </summary>
+            <param name="levels">How many indentations to add</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.EndIndent">
+            <summary>
+            Decrease the indentation level by one
+            BeginIndent() and EndIndent() should be used in pairs
+            Preferably using a try finally pattern so as to avoid messed up formatting on errors
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.EndIndent(System.Int32)">
+            <summary>
+            Decrease the indentation level by the supplied amount
+            BeginIndent() and EndIndent() should be used in pairs
+            Preferably using a try finally pattern so as to avoid messed up formatting on errors
+            </summary>
+            <param name="levels">How many indentations to remove</param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.Close">
+            <summary>
+            Closes the underlying writer/stream
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.Flush">
+            <summary>
+            Flush the underying writer/stream
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.ScriptWriter.ToString">
+            <summary>
+            Adds current indent and position information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.FormatProvider">
+            <summary>
+            The format provider to use when formatting
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.Compress">
+            <summary>
+            writer requests that compressed content is provided when writing
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.CurrentIndentLevel">
+            <summary>
+            Tracks how many indentations we are currently at
+            Increased by BeginIndent()
+            Reduced by EndIndent()
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.IndentText">
+            <summary>
+            The string to use for each indentation
+            Repeated fore each IndentLevel
+            Default: tab
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.IncludeIndentation">
+            <summary>
+            If we should Include indents when writing
+            If false then IndentString is always empty
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.IndentString">
+            <summary>
+            The current string to use for indentation
+            Empty if IncludeIndents is false
+            otherwise IndentationLevel * IndentText
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.Indents">
+            <summary>
+            Cache of indent levels already created
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.IsStartOfLine">
+            <summary>
+            Used to stop repeated WriteNewLineAndIndent
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.ScriptWriter.NewLine">
+            <summary>
+            What to use for a new line
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent">
+            <summary>
+            Renders a component structure
+            
+            Ref: http://extjs.com/forum/showthread.php?t=28085
+            </summary>
+            
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.#ctor(System.Object,System.Object,ClockWork.ScriptBuilder.JavaScript.JsObject)">
+            <summary>
+            Create a component called componentName based on the baseComponent component
+            defined by componentObject
+            </summary>
+            <param name="componentName"></param>
+            <param name="baseComponent"></param>
+            <param name="componentObject"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            renders the component
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.ComponentExample(ClockWork.ScriptBuilder.IScriptWriter)">
+            <summary>
+            An example on creating a component
+            </summary>
+            <param name="writer"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.ComponentName">
+            <summary>
+            the name (including namespace) for the new class
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.BaseComponent">
+            <summary>
+            the class this inherits from
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.Object">
+            <summary>
+            Declare class properties and functions 
+            These can be altered when creating instances of the class by parameters in the constructor
+            You can also use them inside any class functions by using the "this" keyword.
+            
+            Components have the following functions that can be overwritten
+            	initComponent
+            	onRender
+            	initEvents
+            	afterRender
+            	beforeDestroy
+            	onDestroy
+            
+            make sure you call the base function in your overriding function e.g.
+            ExtJs.BaseApply(this.ClassName, "initComponent")
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.ExtJs.ExtJsComponent.RegistryName">
+            <summary>
+            If supplied, the  script will register the class as an xtype
+            </summary>
+        </member>
+        <member name="T:ClockWork.ScriptBuilder.JavaScript.JsCall">
+            <summary>
+            Renders function call syntax:
+            functionName(arg, arg) 
+            </summary>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            create a function call:
+            functionName(arguments)
+            </summary>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(System.Object,System.Object[])">
+            <summary>
+            create a function call:
+            functionName(arguments)
+            </summary>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,ClockWork.ScriptBuilder.JavaScript.JsArguments)">
+            <summary>
+            create a function call:
+            functionName(arguments)
+            </summary>
+            <param name="layout"></param>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsCall.#ctor(ClockWork.ScriptBuilder.ScriptLayout,System.Object,System.Object[])">
+            <summary>
+            create a function call:
+            functionName(arguments)
+            </summary>
+            <param name="layout"></param>
+            <param name="functionName"></param>
+            <param name="arguments"></param>
+        </member>
+        <member name="M:ClockWork.ScriptBuilder.JavaScript.JsCall.OnRender(ClockWork.ScriptBuilder.RenderingEventArgs)">
+            <summary>
+            render the call
+            functionName(arg, arg, arg)
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsCall.Arguments">
+            <summary>
+            The arguments passed in the call
+            </summary>
+        </member>
+        <member name="P:ClockWork.ScriptBuilder.JavaScript.JsCall.FunctionName">
+            <summary>
+            The name of the function to call
+            </summary>
+        </member>
+    </members>
+</doc>

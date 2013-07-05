@@ -1,0 +1,19 @@
+﻿[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=ClockWork_ScriptBuilder_Doc.chm
+Contents file=ClockWork_ScriptBuilder_Doc.hhc
+Index file=ClockWork_ScriptBuilder_Doc.hhk
+Default Topic=html\4915fc00-ecbc-ade6-074f-fa7a68ac2f90.htm
+Full-text search=Yes
+Language=0x409 English (United States)
+Title=ClockWork_ScriptBuilder_Doc
+[FILES]
+html\*.htm
+icons\*.gif
+art\*.gif
+art\*.jpg
+art\*.png
+media\*.gif
+scripts\*.js
+styles\*.css
+[INFOTYPES]
